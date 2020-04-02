@@ -13,5 +13,4 @@ class Startup < ApplicationRecord
             uniqueness: { case_sensitive: false },
             format: { with: VALID_EMAIL_REGEX }
 
-
 end
