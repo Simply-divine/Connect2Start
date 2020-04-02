@@ -1,0 +1,4 @@
+<blockquote class="blockquote text-center">
+  <p class="mb-0">Welcome <%= @investor.fname.upcase %> <%= @investor.lname.upcase %></p>
+</blockquote>
+<%= render 'investor', obj: @investor %>
