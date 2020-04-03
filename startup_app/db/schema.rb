@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2020_04_02_050908) do
     t.string "org_name"
     t.string "contact_name"
     t.string "org_email"
-    t.string "cur_emps"
+    t.decimal "cur_emps"
     t.decimal "phone"
     t.string "description"
   end
