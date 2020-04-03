@@ -3,4 +3,9 @@ Rails.application.routes.draw do
   get 'pages/home', to: 'pages#home'
   get 'pages/about', to: 'pages#about'
 
+  get 'investors/signup', to: 'investors#new'
+  resources :investors, except: [:new]
+
+  get 'startups/signup', to: 'startups#new'
+  resources :startups, except: [:new]
 end

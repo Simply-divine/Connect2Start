@@ -1,3 +1,18 @@
-<% obj.each do |investor| %>
-
+<% obj.each do |startup| %>
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <div class="card-title h5"><%= startup.org_name %></div>
+      <p class="card-text"><%= startup.description %></p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><%= startup.contact_name %></li>
+      <li class="list-group-item"><%= startup.org_email %></li>
+      <li class="list-group-item"><%= startup.phone %></li>
+      <li class="list-group-item"><%= startup.cur_emps %></li>
+    </ul>
+    <!--    <div class="card-body">-->
+    <!--      <a href="#" class="card-link">Card link</a>-->
+    <!--      <a href="#" class="card-link">Another link</a>-->
+    <!--    </div>-->
+  </div>
 <% end %>
