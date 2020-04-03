@@ -8,9 +8,10 @@ class Startup < ApplicationRecord
   validates :contact_name, presence: true, length: {minimum: 3, maximum: 75}
   validates :description, presence: true
   validates :cur_emps, presence: true
-  validates :phone, presence: true,  phone: true
+  validates :phone, presence: true
   validates :org_email, presence: true, length: { maximum: 100 },
             uniqueness: { case_sensitive: false },
             format: { with: VALID_EMAIL_REGEX }
 
+  has_secure_password
 end

@@ -24,16 +24,20 @@
   </div>
   <div class="form-group">
     <%= f.label :"Contact Number", for: "phone"%>
-    <%= f.numeric_field :phone, class: "form-control", id: "phone", placeholder: "9876543210" %>
+    <%= f.number_field :phone, class: "form-control", id: "phone", placeholder: "9876543210" %>
   </div>
   <div class="form-group">
     <%= f.label :"Employees", for: "emp"%>
-    <%= f.numeric_field :cur_emps, class: "form-control", id: "emp", placeholder: "27" %>
+    <%= f.number_field :cur_emps, class: "form-control", id: "emp", placeholder: "27" %>
   </div>
   <div class="form-group">
   <%= f.label :"Startup Description", for: "desc"%>
   <%= f.text_area :description, class: "form-control", id: "desc", placeholder: "Write about your Idea/Breakthrough/..." %>
-</div>
+  </div>
+  <div class="form-group">
+    <%= f.label :"Password", for: "pwd" %>
+    <%= f.password_field :password, class: "form-control", id: "pwd" %>
+  </div>
   <div class="form-group">
     <div class="form-check">
       <input class="form-check-input" type="checkbox" id="gridCheck">
