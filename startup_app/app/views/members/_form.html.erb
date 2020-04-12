@@ -1,0 +1,58 @@
+<% if @member.errors.any? %>
+  <div class="alert alert-danger" role="alert">
+    <p>The following errors were encountered :</p>
+    <ul>
+      <% @member.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for @member do |f| %>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <%= f.label :"First Name", for: "fname"%>
+      <%= f.text_field :fname, class: "form-control", id: "fname", placeholder: "Ratan" %>
+    </div>
+    <div class="form-group col-md-6">
+      <%= f.label :"Last Name", for: "lname"%>
+      <%= f.text_field :lname, class: "form-control", id: "lname", placeholder: "Tata" %>
+    </div>
+  </div>
+  <div class="form-row">
+  <div class="form-group col-md-6">
+    <%= f.label :"Ex Startup Name", for: "exstname"%>
+    <%= f.text_field :ex_startup_name, class: "form-control", id: "exstname", placeholder: "Connect to Start" %>
+  </div>
+  <div class="form-group col-md-6">
+    <%= f.label :"Ex Startup Field/Desc/Info", for: "exstfield"%>
+    <%= f.text_field :ex_startup_field, class: "form-control", id: "exstfield", placeholder: "Web Application for Ex-startup Members to connect and innovate" %>
+  </div>
+</div>
+  <div class="form-group">
+    <%= f.label :"Date of Birth", for: "dob"%>
+    <%= f.date_field :dob, class: "form-control", id: "dob", placeholder: "dd/mm/yyyy" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :"Contact Number", for: "phone"%>
+    <%= f.number_field :phone, class: "form-control", id: "phone", placeholder: "9876543210" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :"Email", for: "email" %>
+    <%= f.email_field :email, class: "form-control", id: "email", placeholder: "abcd@xyz.com" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :"Password", for: "pwd" %>
+    <%= f.password_field :password, class: "form-control", id: "pwd" %>
+  </div>
+  <div class="form-group">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="gridCheck">
+      <label class="form-check-label" for="gridCheck">
+        Check me out
+      </label>
+    </div>
+  </div>
+  <%= f.submit "Sign up", class: "btn btn-primary" %>
+<% end %>

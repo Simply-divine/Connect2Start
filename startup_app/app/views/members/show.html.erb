@@ -1,0 +1,23 @@
+<blockquote class="blockquote text-center">
+  <p class="mb-0">Welcome <%= @member.fname.upcase %></p>
+</blockquote>
+<%#= render 'member', obj: @member %>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <div class= "card-title h5">
+      <%= @member.fname.upcase%> <%=@member.lname.upcase %>
+    </div>
+    <p><%#= @member.description, class: "card-text" %></p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><%= @member.ex_startup_name %></li>
+    <li class="list-group-item"><%= @member.ex_startup_field %></li>
+    <li class="list-group-item"><%= @member.email %></li>
+    <li class="list-group-item"><%= @member.phone %></li>
+    <li class="list-group-item"><%= @member.dob %></li>
+  </ul>
+  <!--    <div class="card-body">-->
+  <!--      <a href="#" class="card-link">Card link</a>-->
+  <!--      <a href="#" class="card-link">Another link</a>-->
+  <!--    </div>-->
+</div>
