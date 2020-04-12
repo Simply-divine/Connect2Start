@@ -9,4 +9,8 @@ Rails.application.routes.draw do
 
   get 'startups/signup', to: 'startups#new'
   resources :startups, except: [:new]
+
+  get 'members/signup', to: 'members#new'
+  resources :members, except: [:new]
+
 end

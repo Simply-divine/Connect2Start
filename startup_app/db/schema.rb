@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_12_082619) do
+ActiveRecord::Schema.define(version: 2020_04_12_085539) do
 
   create_table "articles", force: :cascade do |t|
     t.string "title"
@@ -38,8 +38,9 @@ ActiveRecord::Schema.define(version: 2020_04_12_082619) do
     t.string "ex_startup_name"
     t.string "dob"
     t.string "ex_startup_field"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string "password_digest"
   end
 
   create_table "startups", force: :cascade do |t|
@@ -50,8 +51,8 @@ ActiveRecord::Schema.define(version: 2020_04_12_082619) do
     t.decimal "phone"
     t.string "description"
     t.string "password_digest"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

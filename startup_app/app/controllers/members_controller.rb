@@ -58,7 +58,7 @@ class MembersController < ApplicationController
   end
 
   def member_params
-    params.require(:member).permit(:fname, :lname, :email, :dob, :phone, :password)
+    params.require(:member).permit(:fname, :lname, :email, :dob, :phone, :password, :ex_startup_name, :ex_startup_field)
   end
 
   def require_same_member
