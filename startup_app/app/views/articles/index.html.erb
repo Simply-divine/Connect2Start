@@ -1,16 +1,19 @@
 <h1>Listing all articles</h1>
-
-<% @articles.each do |article|%>
-    <div class="card text-center">
-  <div class="card-header">
-    
-  </div>
-  <div class="card-body">
-    <h5 class="card-title">Special title treatment</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-  <div class="card-footer text-muted">
-    2 days ago
-  </div>
-</div>
+<% @articles.each do |article| %>
+	<div class = "card card-list w-75 offset-1 ">
+		<div class ="card-header" > <%= link_to article.title, article_path(article) %>
+		<%# <h6 class = "card-subttle mb-2 text-muted article-user-specs"> Created by <%= article.user.username if article.user %> 
+			<%= time_ago_in_words(article.created_at) %> ago, 
+			Updated <%= time_ago_in_words(article.updated_at) %> ago
+	</h6>
+		</div>
+		<div class = "card-body">
+			<%= truncate(article.description,length: 100) %>
+		</div>
+		<%# <% if current_user == article.user || current_user.admin? %>
+		<div class = "card-footer"> 
+			<%= link_to "Edit",edit_article_path(article),class: "btn btn-md btn-primary"  %>
+			<td> <%= link_to "delete",article_path(article),method: :delete,data: {confirm: 'Are you sure?'},class: "btn btn-danger btn-md" %>
+		</div>
+	</div>
+<% end %>

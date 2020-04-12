@@ -1,6 +1,23 @@
-<h1> showing selected article</h1>
-
-<p> Title: <%= @article.title%>
-</p>
-<p> Description <%= @article.description%>
-</p>
+ <h1 align="center" class = "container">
+	<strong>
+		Title :
+		<%= @article.title %>
+		<strong></h1>
+<div class="card">
+	<div class="card-header">
+		<div class="card bg-light mycard mb-3 offset-5" style="max-width: 540px;">
+			<div class="row">
+				<div class="col-md-8">
+				</div>
+			</div>
+		</div>
+		<h4><strong>Description:</strong></h4>
+	</div>
+	<div class="card-body">
+		<%= @article.description %>
+	</div>
+	<div class="card-footer">
+		<%= link_to 'View all articles', articles_path, class: "btn btn-md btn-success" %>
+		<!-- </div> -->
+	</div>
+</div>
