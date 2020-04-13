@@ -1,4 +1,5 @@
 <h1>Listing all articles</h1>
+<%= link_to  "Create new Article", new_article_path%>
 <% @articles.each do |article| %>
 	<div class = "card card-list w-75 offset-1 ">
 		<div class ="card-header" > <%= link_to article.title, article_path(article) %>
