@@ -1,0 +1,19 @@
+<% obj.each do |user| %>
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <div class= "card-title h5">
+        <%= user.fname.upcase%> <%=user.lname.upcase %>
+      </div>
+      <p><%#= user.description, class: "card-text" %></p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><%= user.email %></li>
+      <li class="list-group-item"><%= user.phone %></li>
+      <li class="list-group-item"><%= user.dob %></li>
+    </ul>
+<!--    <div class="card-body">-->
+<!--      <a href="#" class="card-link">Card link</a>-->
+<!--      <a href="#" class="card-link">Another link</a>-->
+<!--    </div>-->
+  </div>
+<% end %>

@@ -15,5 +15,7 @@ Rails.application.routes.draw do
 
   get 'members/signup', to: 'members#new'
   resources :members, except: [:new]
-
+  
+  get 'signup',to: 'users#new'
+  resources :users, except: [:new]
 end
