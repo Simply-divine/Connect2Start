@@ -1,0 +1,19 @@
+<% obj.each do |mentor| %>
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <div class= "card-title h5">
+        <%= mentor.fname.upcase%> <%=mentor.lname.upcase %>
+      </div>
+      <p><%#= mentor.description, class: "card-text" %></p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><%= mentor.email %></li>
+      <li class="list-group-item"><%= mentor.phone %></li>
+      <li class="list-group-item"><%= mentor.dob %></li>
+    </ul>
+<!--    <div class="card-body">-->
+<!--      <a href="#" class="card-link">Card link</a>-->
+<!--      <a href="#" class="card-link">Another link</a>-->
+<!--    </div>-->
+  </div>
+<% end %>
