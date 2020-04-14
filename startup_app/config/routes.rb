@@ -16,4 +16,7 @@ Rails.application.routes.draw do
   get 'members/signup', to: 'members#new'
   resources :members, except: [:new]
 
+  get 'connect', to: 'chatroom#index'
+  get 'login', to: 'sessions#new'
+
 end
