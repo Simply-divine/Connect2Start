@@ -9,7 +9,7 @@ class Investor < ApplicationRecord
   validates :dob, presence: true
   validates :phone, presence: true
   validates :email, presence: true, length: { maximum: 100 },
-            uniqueness: { case_sensitive: false },
+            uniqueness: true,
             format: { with: VALID_EMAIL_REGEX }
 
   has_secure_password
