@@ -1,21 +1,28 @@
-<blockquote class="blockquote text-center">
-  <p class="mb-0">Welcome <%= @user.fname.upcase %></p>
-</blockquote>
-<%#= render 'user', obj: @user %>
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <div class= "card-title h5">
-      <%= @user.fname.upcase%> <%=@user.lname.upcase %>
+<div class="card mb-3 offset-2" style="max-width: 540px;">
+  <div class="row no-gutters ">
+    <div class="col-md-5">
+			<%= link_to gravatar_for(@user,size: 245),user_path(@user) %>
     </div>
-    <p><%#= @user.description, class: "card-text" %></p>
+    <div class="col-md-5 offset-1">
+      <div class="card-body my-auto align-items-center">
+				<h1 class="card-title center justify-content-center" ><%= @user.fname %></h1>
+				<p class="card-text  center justify-content-center"><small class = "text-muted">Contact <%= @user.fname %>:</small>
+				<small class = "text-muted"><%= @user.email %></small></p>
+                <small class = "text-muted"><%= @user.phone %></small></p>
+                <small class = "text-muted"><%= @user.dob %></small></p>
+                <p class = "card-text center"><small class = "text-muted"> User has <%= pluralize(@user.articles.count,"article") %></small></p>
+      </div>
+    </div>
   </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item"><%= @user.email %></li>
-    <li class="list-group-item"><%= @user.phone %></li>
-    <li class="list-group-item"><%= @user.dob %></li>
-  </ul>
-  <!--    <div class="card-body">-->
-  <!--      <a href="#" class="card-link">Card link</a>-->
-  <!--      <a href="#" class="card-link">Another link</a>-->
-  <!--    </div>-->
 </div>
+<div class = "articles">
+	<h3 class = "offset-2" > <%= @user.fname %>'s articles </h4>
+</div>
+<div class = " container pagination justify-content-center">
+	<%= will_paginate @user_articles %>
+</div>
+<%= render 'articles/article',obj: @user.articles %>
+<div class = " container pagination justify-content-center">
+	<%= will_paginate @user_articles %>
+</div>
+

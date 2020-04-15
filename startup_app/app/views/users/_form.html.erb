@@ -1,13 +1,5 @@
-<% if @user.errors.any? %>
-  <div class="alert alert-danger" role="alert">
-    <p>The following errors were encountered :</p>
-    <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
+<div class = "container">
+<%= render 'shared/errors',obj: @user %>
 
 <%= form_for @user do |f| %>
   <div class="form-row">
@@ -44,5 +36,6 @@
       </label>
     </div>
   </div>
-  <%= f.submit "Sign up", class: "btn btn-primary" %>
+  <%= f.submit(@user.new_record? ? "Sign up": "Update your account", class: "btn btn-primary") %>
 <% end %>
+</div>

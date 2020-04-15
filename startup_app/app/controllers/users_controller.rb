@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_action :set_user, only: [:edit, :show, :update]
+  before_action :set_user, only: [:edit, :show, :update, :destroy]
 
     def new
         @user = User.new
@@ -10,7 +10,7 @@ class UsersController < ApplicationController
         @user = User.new(user_params)
         if @user.save
           flash[:success] = "Object successfully created"
-          redirect_to users_path
+          redirect_to articles_path
         else
           flash[:error] = "Something went wrong"
           render 'new'
@@ -35,14 +35,14 @@ class UsersController < ApplicationController
     end
 
     def show
-      @user = User.find(params[:id])
-      if @user.destroy
-        flash[:danger] = "User deleted"
-        redirect_to users_path
-      else
-        flash[:danger] = "Sry, your requested action couldn't be performed!"
-        redirect_to users_path
-      end
+      @user_articles = @user.articles.paginate(page: params[:page], per_page: 5)
+
+    end
+
+    def destroy
+      @user.destroy
+      flash[:notice] = "User successfully deleted"
+      redirect_to users_path
     end
 
     private

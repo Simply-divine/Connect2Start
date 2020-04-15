@@ -1,20 +1,3 @@
 <h1>Listing all articles</h1>
 <%= link_to  "Create new Article", new_article_path%>
-<% @articles.each do |article| %>
-	<div class = "card card-list w-75 offset-1 ">
-		<div class ="card-header" > <%= link_to article.title, article_path(article) %>
-		<%# <h6 class = "card-subttle mb-2 text-muted article-user-specs"> Created by <%= article.user.username if article.user %> 
-			<%= time_ago_in_words(article.created_at) %> ago, 
-			Updated <%= time_ago_in_words(article.updated_at) %> ago
-	</h6>
-		</div>
-		<div class = "card-body">
-			<%= truncate(article.description,length: 100) %>
-		</div>
-		<%# <% if current_user == article.user || current_user.admin? %>
-		<div class = "card-footer"> 
-			<%= link_to "Edit",edit_article_path(article),class: "btn btn-md btn-primary"  %>
-			<td> <%= link_to "delete",article_path(article),method: :delete,data: {confirm: 'Are you sure?'},class: "btn btn-danger btn-md" %>
-		</div>
-	</div>
-<% end %>
+<%= render  "article", obj: @articles%>

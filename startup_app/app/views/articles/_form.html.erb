@@ -1,0 +1,27 @@
+<%= render 'shared/errors',obj: @article %>
+<%= form_for @article do |f| %>
+<div class="form-group row">
+  <div class="col-form-label col-sm-2">
+    <%= f.label :title %><br>
+  </div>
+  <div class="col-sm-8">
+    <%= f.text_field :title, class: "form-control", placeholder: "Title of article", autofocus: true %>
+  </div>
+</div>
+<div class="form-group row">
+  <div class="col-form-label col-sm-2">
+    <%= f.label :description %><br>
+  </div>
+  <div class="col-sm-8">
+    <%= f.text_area :description,class: "form-control", placeholder: "Body of article",rows: 10 %>
+  </div>
+</div>
+<div class="form-group row">
+  <div class="offset-2 col-sm-8 ">
+    <%= f.submit class: "btn btn-primary btn-lg" %>
+  </div>
+</div>
+<% end %>
+<div class="col-sm-6 offset-4">
+[<%= link_to 'Cancel and return to articles listings page',articles_path %>]
+</div>
