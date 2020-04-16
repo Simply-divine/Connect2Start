@@ -15,6 +15,15 @@ Rails.application.routes.draw do
 
   get 'members/signup', to: 'members#new'
   resources :members, except: [:new]
+  
+  get 'signup',to: 'users#new'
+  resources :users, except: [:new]
+
+  get 'login', to: 'sessions#new'
+  post  'login',to: 'sessions#create'
+  delete 'logout',to: 'sessions#destroy'
+  
+
 
   get 'connect', to: 'chatroom#index'
   get 'login', to: 'sessions#new'

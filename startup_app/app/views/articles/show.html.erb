@@ -1,4 +1,4 @@
- <h1 align="center" class = "container">
+<h1 align="center">
 	<strong>
 		Title :
 		<%= @article.title %>
@@ -6,8 +6,21 @@
 <div class="card">
 	<div class="card-header">
 		<div class="card bg-light mycard mb-3 offset-5" style="max-width: 540px;">
+			<h2	>Created by:</h2>
 			<div class="row">
 				<div class="col-md-8">
+					<%= link_to gravatar_for(@article.user,size: 130),user_path(@article.user) %>
+				</div>
+			</div>
+			<div class = "row">
+				<div class="col-md-8">
+					<div class="card-body">
+						<h1 class="card-title"><%= @article.user.fname %></h1>
+						<p class="card-text" ><small class = "text-muted">Contact <%= @article.user.fname %>:</small>
+						<small class = "text-muted"><%= @article.user.email %></small></p>
+						<p class = "card-text"><small class = "text-muted"> <%=(@article.user.fname)%> has <%= pluralize(@article.user.articles.count,"article") %></small></p>
+
+					</div>
 				</div>
 			</div>
 		</div>
@@ -17,7 +30,10 @@
 		<%= @article.description %>
 	</div>
 	<div class="card-footer">
+		<%# <%= link_to 'edit current article',edit_article_path(@article),class: "btn btn-md btn-primary" if logged_in? and (current_user == @article.user || current_user.admin?) %>
+		<%# <%= link_to 'delete article', article_path(@article), class: "btn btn-md btn-danger", method: :delete, data: {confirm: 'Are you sure you want to delete the article?'} if logged_in? and (current_user == @article.user || current_user.admin?) %> 	
 		<%= link_to 'View all articles', articles_path, class: "btn btn-md btn-success" %>
 		<!-- </div> -->
 	</div>
+
 </div>
