@@ -1,3 +1,3 @@
 class Chatroom < ApplicationRecord
-  has_many :message, dependent: :destroy, inverse_of: chatroom
+  has_many :messages, dependent: :destroy, inverse_of: chatroom
 end
