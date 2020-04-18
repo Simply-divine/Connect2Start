@@ -2,16 +2,16 @@
   <div class="card" style="width: 18rem;">
     <div class="card-body">
       <div class= "card-title h5">
-        <%= member.fname.upcase%> <%=member.lname.upcase %>
+        <%= member.user.fname.upcase%> <%=member.user.lname.upcase %>
       </div>
       <p><%#= member.description, class: "card-text" %></p>
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item"><%= member.ex_startup_name %></li>
       <li class="list-group-item"><%= member.ex_startup_field %></li>
-      <li class="list-group-item"><%= member.email %></li>
-      <li class="list-group-item"><%= member.phone %></li>
-      <li class="list-group-item"><%= member.dob %></li>
+      <li class="list-group-item"><%= member.user.email %></li>
+      <li class="list-group-item"><%= member.user.phone %></li>
+      <li class="list-group-item"><%= member.user.dob %></li>
     </ul>
 <!--    <div class="card-body">-->
 <!--      <a href="#" class="card-link">Card link</a>-->

@@ -1,6 +1,8 @@
 class MembersController < ApplicationController
 
   before_action :set_member, only: [:edit, :show, :update]
+  before_action  :require_user, except: [:show,:index,:new,:create]
+
   #before_action :require_same_member, only: [:edit, :update]
   # before_action :require_admin, only: [:destroy]
 
@@ -9,11 +11,17 @@ class MembersController < ApplicationController
   end
 
   def new
+    if !logged_in_user?
+      flash[:danger] = "You need to make an account to our site first..please sign up or log in to your account"
+      redirect_to members_path
+    else
     @member = Member.new
+    end
   end
 
   def create
     @member = Member.new(member_params)
+    @member.user = current_user
     if @member.save
       session[:member_id] = @member.id
       flash[:success] = "Successfully signed up!"
@@ -42,6 +50,7 @@ class MembersController < ApplicationController
 
   def destroy
     @member = Member.find(params[:id])
+    
     if @member.destroy
       flash[:danger] = "Member deleted"
       redirect_to members_path
@@ -58,7 +67,7 @@ class MembersController < ApplicationController
   end
 
   def member_params
-    params.require(:member).permit(:fname, :lname, :email, :dob, :phone, :password, :ex_startup_name, :ex_startup_field)
+    params.require(:member).permit(:ex_startup_name, :ex_startup_field, :experience)
   end
 
   def require_same_member
