@@ -1,5 +1,7 @@
 <blockquote class="blockquote text-center">
-  <p class="mb-0">Investor</p>
+  <p class="mb-0">
+      <%= link_to  "Join our team of investors", investors_signup_path %>
+  </p>
 </blockquote>
 <div class = "container pagination justify-content-center">
   <%= will_paginate @investors %>
@@ -8,3 +10,4 @@
 <div class = "container pagination justify-content-center">
   <%= will_paginate @investors %>
 </div>
+
