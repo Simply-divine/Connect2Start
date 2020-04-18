@@ -1,6 +1,7 @@
 class InvestorsController < ApplicationController
 
   before_action :set_investor, only: [:edit, :show, :update]
+  before_action  :require_user, except: [:show,:index,:new,:create]
   #before_action :require_same_investor, only: [:edit, :update]
   # before_action :require_admin, only: [:destroy]
 
@@ -9,13 +10,19 @@ class InvestorsController < ApplicationController
   end
 
   def new
-    @investor = Investor.new
+    if !logged_in_user?
+      flash[:danger] = "You need to make an account to our site first..please sign up or log in to your account"
+      redirect_to investors_path
+    else
+        @investor = Investor.new
+    end
   end
 
-  def create
+  def create 
     @investor = Investor.new(investor_params)
+    @investor.user = current_user
+    # flash[:notice] = params[:investor]
     if @investor.save
-      session[:investor_id] = @investor.id
       flash[:success] = "Successfully signed up!"
       redirect_to investor_path(@investor)
     else
@@ -58,7 +65,7 @@ class InvestorsController < ApplicationController
   end
 
   def investor_params
-    params.require(:investor).permit(:fname, :lname, :email, :dob, :phone, :password)
+    params.require(:investor).permit(:field, :experience)
   end
 
   def require_same_investor

@@ -7,7 +7,7 @@
 <% if @rooms.present? %>
   <nav class="nav flex-column">
     <% @rooms.each do |room| %>
-      <%= link_to room.name.upcase, room_path(room), class: 'text-left' %>
+      <%= link_to room.name.upcase, room_path(room), class: 'nav-link room-nav-link' %>
     <% end %>
   </nav>
 <% else %>

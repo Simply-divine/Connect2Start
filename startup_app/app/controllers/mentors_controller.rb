@@ -1,6 +1,8 @@
 class MentorsController < ApplicationController
 
   before_action :set_mentor, only: [:edit, :show, :update]
+  before_action  :require_user, except: [:show,:index,:new,:create]
+
   #before_action :require_same_mentor, only: [:edit, :update]
   # before_action :require_admin, only: [:destroy]
 
@@ -9,11 +11,17 @@ class MentorsController < ApplicationController
   end
 
   def new
+    if !logged_in_user?
+      flash[:danger] = "You need to make an account to our site first..please sign up or log in to your account"
+      redirect_to members_path
+    else
     @mentor = Mentor.new
+    end
   end
 
   def create
     @mentor = Mentor.new(mentor_params)
+    @mentor.user = current_user
     if @mentor.save
       session[:mentor_id] = @mentor.id
       flash[:success] = "Successfully signed up!"
@@ -58,7 +66,7 @@ class MentorsController < ApplicationController
   end
 
   def mentor_params
-    params.require(:mentor).permit(:fname, :lname, :email, :dob, :phone, :password)
+    params.require(:mentor).permit(:field,:experience)
   end
 
   def require_same_mentor

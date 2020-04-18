@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_17_123119) do
+ActiveRecord::Schema.define(version: 2020_04_18_112320) do
 
   create_table "articles", force: :cascade do |t|
     t.string "title"
@@ -21,38 +21,25 @@ ActiveRecord::Schema.define(version: 2020_04_17_123119) do
   end
 
   create_table "investors", force: :cascade do |t|
-    t.string "fname"
-    t.string "lname"
-    t.datetime "dob"
-    t.decimal "phone"
-    t.string "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "password_digest"
+    t.integer "user_id"
+    t.string "field"
+    t.integer "experience"
   end
 
   create_table "members", force: :cascade do |t|
-    t.string "lname"
-    t.string "fname"
-    t.decimal "phone"
-    t.string "email"
     t.string "ex_startup_name"
-    t.string "dob"
     t.string "ex_startup_field"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.string "password_digest"
+    t.integer "experience"
+    t.integer "user_id"
   end
 
   create_table "mentors", force: :cascade do |t|
-    t.string "fname"
-    t.string "lname"
-    t.datetime "dob"
-    t.decimal "phone"
-    t.string "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "password_digest"
+    t.string "field"
+    t.integer "experience"
+    t.integer "user_id"
   end
 
   create_table "messages", force: :cascade do |t|

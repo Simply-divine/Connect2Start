@@ -1,18 +1,18 @@
 <blockquote class="blockquote text-center">
-  <p class="mb-0">Welcome <%= @mentor.fname.upcase %></p>
+  <p class="mb-0">Welcome <%= @mentor.user.fname.upcase %></p>
 </blockquote>
 <%#= render 'mentor', obj: @mentor %>
 <div class="card" style="width: 18rem;">
   <div class="card-body">
     <div class= "card-title h5">
-      <%= @mentor.fname.upcase%> <%=@mentor.lname.upcase %>
+      <%= @mentor.user.fname.upcase%> <%=@mentor.user.lname.upcase %>
     </div>
     <p><%#= @mentor.description, class: "card-text" %></p>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item"><%= @mentor.email %></li>
-    <li class="list-group-item"><%= @mentor.phone %></li>
-    <li class="list-group-item"><%= @mentor.dob %></li>
+    <li class="list-group-item"><%= @mentor.user.email %></li>
+    <li class="list-group-item"><%= @mentor.user.phone %></li>
+    <li class="list-group-item"><%= @mentor.user.dob %></li>
   </ul>
   <!--    <div class="card-body">-->
   <!--      <a href="#" class="card-link">Card link</a>-->
