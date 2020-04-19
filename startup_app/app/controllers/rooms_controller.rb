@@ -13,8 +13,7 @@ class RoomsController < ApplicationController
   end
 
   def create
-    @room = Room.new permitted_parameters
-
+    @room = Room.new(permitted_parameters)
     if @room.save
       flash[:success] = "Room #{@room.name} was created successfully"
       redirect_to rooms_path
@@ -27,7 +26,7 @@ class RoomsController < ApplicationController
   end
 
   def show
-    @room_message = Message.new(room: @room)
+    @message = Message.new(room: @room)
     @room_messages = @room.message.includes(:user)
   end
 
