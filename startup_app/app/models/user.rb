@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :articles
+  has_many :messages, dependent: :destroy
   has_one :investor
   has_one :mentor
   has_one :member

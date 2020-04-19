@@ -1,27 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-  <title>Startup</title>
+	<title>Startup</title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 	<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
-
 <body class="d-flex flex-column sticky-footer-wrapper">
-
-		<div id="page-content">
-			<%= render 'layouts/navigation' %>
-			<%= render 'layouts/messages' %>
-			<div class="flex-fill container" >
-				<%= yield %>
-			</div>
+	<div id="page-content">
+		<%= render 'layouts/navigation' %>
+		<%= render 'layouts/messages' %>
+		<div class="flex-fill container" >
+			<%= yield %>
 		</div>
-
-		<footer class="sticky-footer">
-			<%= render 'layouts/footer' %>
-		</footer>
-		<%= debug(params) if Rails.env.development? %>
-	</body>
+	</div>
+	<footer class="sticky-footer">
+		<%= render 'layouts/footer' %>
+	</footer>
+	<%= debug(params) if Rails.env.development? %>
+</body>
 </html>

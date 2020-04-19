@@ -1,0 +1,65 @@
+"gcc -o conftest -I/usr/share/rvm/rubies/ruby-2.6.3/include/ruby-2.6.0/x86_64-linux -I/usr/share/rvm/rubies/ruby-2.6.3/include/ruby-2.6.0/ruby/backward -I/usr/share/rvm/rubies/ruby-2.6.3/include/ruby-2.6.0 -I.    -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wduplicated-cond -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wrestrict -Wwrite-strings -Wimplicit-fallthrough=0 -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-packed-bitfield-compat -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wsuggest-attribute=format -Wsuggest-attribute=noreturn -Wunused-variable  -fPIC  conftest.c  -L. -L/usr/share/rvm/rubies/ruby-2.6.3/lib -Wl,-rpath,/usr/share/rvm/rubies/ruby-2.6.3/lib -L. -fstack-protector-strong -rdynamic -Wl,-export-dynamic     -Wl,-rpath,/usr/share/rvm/rubies/ruby-2.6.3/lib -L/usr/share/rvm/rubies/ruby-2.6.3/lib -lruby  -lm   -lc "
+/usr/share/rvm/rubies/ruby-2.6.3/lib/ruby/2.6.0/mkmf.rb:406: warning: Insecure world writable dir /mnt/c in PATH, mode 040777
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return 0;
+6: }
+/* end */
+
+"gcc -I/usr/share/rvm/rubies/ruby-2.6.3/include/ruby-2.6.0/x86_64-linux -I/usr/share/rvm/rubies/ruby-2.6.3/include/ruby-2.6.0/ruby/backward -I/usr/share/rvm/rubies/ruby-2.6.3/include/ruby-2.6.0 -I.    -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wduplicated-cond -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wrestrict -Wwrite-strings -Wimplicit-fallthrough=0 -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-packed-bitfield-compat -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wsuggest-attribute=format -Wsuggest-attribute=noreturn -Wunused-variable  -fPIC    -Werror -c conftest.c"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+have_library: checking for gzdopen() in -lz... -------------------- yes
+
+"gcc -o conftest -I/usr/share/rvm/rubies/ruby-2.6.3/include/ruby-2.6.0/x86_64-linux -I/usr/share/rvm/rubies/ruby-2.6.3/include/ruby-2.6.0/ruby/backward -I/usr/share/rvm/rubies/ruby-2.6.3/include/ruby-2.6.0 -I.    -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wduplicated-cond -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wrestrict -Wwrite-strings -Wimplicit-fallthrough=0 -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-packed-bitfield-compat -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wsuggest-attribute=format -Wsuggest-attribute=noreturn -Wunused-variable  -fPIC  -g -DXP_UNIX -O3 -Wall -Wcast-qual -Wwrite-strings -Wmissing-noreturn -Winline conftest.c  -L. -L/usr/share/rvm/rubies/ruby-2.6.3/lib -Wl,-rpath,/usr/share/rvm/rubies/ruby-2.6.3/lib -L. -fstack-protector-strong -rdynamic -Wl,-export-dynamic     -Wl,-rpath,/usr/share/rvm/rubies/ruby-2.6.3/lib -L/usr/share/rvm/rubies/ruby-2.6.3/lib -lruby -lz  -lm   -lc "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <zlib.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return 0;
+15: }
+16: int t(void) { void ((*volatile p)()); p = (void ((*)()))gzdopen; return !p; }
+/* end */
+
+--------------------
+
+have_iconv?: checking for iconv... -------------------- yes
+
+"gcc -o conftest -I/usr/share/rvm/rubies/ruby-2.6.3/include/ruby-2.6.0/x86_64-linux -I/usr/share/rvm/rubies/ruby-2.6.3/include/ruby-2.6.0/ruby/backward -I/usr/share/rvm/rubies/ruby-2.6.3/include/ruby-2.6.0 -I.    -O3 -ggdb3 -Wall -Wextra -Wdeclaration-after-statement -Wdeprecated-declarations -Wduplicated-cond -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wrestrict -Wwrite-strings -Wimplicit-fallthrough=0 -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-packed-bitfield-compat -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wsuggest-attribute=format -Wsuggest-attribute=noreturn -Wunused-variable  -fPIC  -g -DXP_UNIX -O3 -Wall -Wcast-qual -Wwrite-strings -Wmissing-noreturn -Winline conftest.c  -L. -L/usr/share/rvm/rubies/ruby-2.6.3/lib -Wl,-rpath,/usr/share/rvm/rubies/ruby-2.6.3/lib -L. -fstack-protector-strong -rdynamic -Wl,-export-dynamic     -Wl,-rpath,/usr/share/rvm/rubies/ruby-2.6.3/lib -L/usr/share/rvm/rubies/ruby-2.6.3/lib -lruby  -lm   -lc "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <stdlib.h>
+ 4: #include <iconv.h>
+ 5: 
+ 6: int main(void)
+ 7: {
+ 8:     iconv_t cd = iconv_open("", "");
+ 9:     iconv(cd, NULL, NULL, NULL, NULL);
+10:     return EXIT_SUCCESS;
+11: }
+/* end */
+
+--------------------
+
