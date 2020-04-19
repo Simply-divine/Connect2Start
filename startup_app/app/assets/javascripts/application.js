@@ -17,3 +17,27 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+scroll_bottom = function() {
+    if ($('#room_messages').length > 0) {
+        $('#room_messages').scrollTop($('#room_messages')[0].scrollHeight);
+    }
+}
+
+submit_message = function() {
+    $('#message_message').on('keydown', function(e) {
+        if (e.keyCode == 13) {
+            $('button').click();
+            e.target.value = "";
+        };
+    });
+};
+
+$(document).on('turbolinks:load', function() {
+    $('.ui.dropdown').dropdown();
+    $('.message .close').on('click', function() {
+        $(this).closest('.message').transition('fade');
+    });
+    submit_message();
+    scroll_bottom();
+})
