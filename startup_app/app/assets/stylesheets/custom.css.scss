@@ -223,13 +223,13 @@ h2 {
         font-size: 20px;
     }
 }
+
 .room-nav-link {
     border: 1px solid #c5ddeb;
     background: #c5ddeb;
     width: 150px;
     font-weight: bolder;
-    & + .room-nav-link {
-        border-top: 0 none;
+    &+.room-nav-link {border-top: 0 none;
     }
 }
 
