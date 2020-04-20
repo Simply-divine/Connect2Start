@@ -7,8 +7,8 @@
     <%= render partial: 'rooms' %>
   </div>
 
-  <div class="col">
-    <div class="chat">
+  <div class="col"  style="width: 40%;">
+    <div class="chat" id="messages_all" data-channel-subscribe="room" data-room-id="<%= @room.id %>">
       <% @room_messages.each do |room_message| %>
       <div class="chat-message-container">
         <div class="row no-gutters">
@@ -41,5 +41,20 @@
 
       <%= form.number_field :room_id, class:"invisible" %>
     <% end %>
+  </div>
+</div>
+<div class="d-none" data-role="message-template">
+  <div class="chat-message-container">
+    <div class="row no-gutters">
+      <div class="col">
+        <div class="message-content">
+          <p class="mb-1" data-role="message-text"></p>
+
+          <div class="text-right">
+            <small data-role="message-date"></small>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

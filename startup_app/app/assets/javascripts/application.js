@@ -19,15 +19,15 @@
 //= require_tree .
 
 scroll_bottom = function() {
-    if ($('#room_messages').length > 0) {
-        $('#room_messages').scrollTop($('#room_messages')[0].scrollHeight);
+    if ($('#messages_all').length > 0) {
+        $('#messages_all').scrollTop($('#messages_all')[0].scrollHeight);
     }
-}
+};
 
 submit_message = function() {
-    $('#message_message').on('keydown', function(e) {
+    $('#input_msg').on('keydown', function(e) {
         if (e.keyCode == 13) {
-            $('button').click();
+            $('#button').click();
             e.target.value = "";
         };
     });
