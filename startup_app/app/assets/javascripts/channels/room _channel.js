@@ -17,6 +17,7 @@ $(function() {
                     content.find('[data-role="message-text"]').text(data.message);
                     content.find('[data-role="message-date"]').text(data.updated_at);
                     $element.append(content);
+                    //byebug
                     $element.animate({ scrollTop: $element.prop("scrollHeight")}, 1000);
                 }
             }
