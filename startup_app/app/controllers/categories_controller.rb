@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-    before_action :set_category, only: [:edit,:show,:update]
+    before_action :set_category, only: [:edit,:show,:update,:destroy]
     def index
         @categories = Category.all
     end
@@ -25,7 +25,18 @@ class CategoriesController < ApplicationController
     end
 
     def update
+        if @category.update(category_params)
+            flash[:success] = "Category successfully updated"
+            redirect_to category_path(@category)
+        else
+            render 'new'
+        end
+    end
 
+    def destroy
+        @category.destroy
+        flash[:danger] = "Category successfully deleted"
+        redirect_to categories_path
     end
      
     private

@@ -1,9 +1,16 @@
 <% obj.each do |article| %>
 	<div class = "card card-list w-75 offset-1 ">
 		<div class ="card-header" > <%= link_to article.title, article_path(article) %>
-		<%# <h6 class = "card-subttle mb-2 text-muted article-user-specs"> Created by <%= article.user.username if article.user %> 
+		 <h6 class = "card-subttle mb-2 text-muted article-user-specs"> Created by <%= article.user.fname if article.user %> 
 			<%= time_ago_in_words(article.created_at) %> ago, 
 			Updated <%= time_ago_in_words(article.updated_at) %> ago
+		</h6>
+			<div class = "card-subttle mb-2 offset-9 ">
+			<% if article.categories.any? %>
+				<p>Categories: <%=render article.categories%></p>
+			<% end %>
+			</div>
+			
 	</h6>
 		</div>
 		<div class = "card-body">
