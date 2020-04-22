@@ -4,6 +4,6 @@ class Mentor < ApplicationRecord
   validates :user_id, presence: true, uniqueness: true
   validates :field, presence: true
   validates :experience, presence: true
-
+  has_many :categories_
   # has_secure_password
 end

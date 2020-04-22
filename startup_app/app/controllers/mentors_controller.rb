@@ -12,7 +12,7 @@ class MentorsController < ApplicationController
 
   def new
     if !logged_in_user?
-      flash[:danger] = "You need to make an account to our site first..please sign up or log in to your account"
+       flash[:danger] = "You need to make an account to our site first..please sign up or log in to your account"
       redirect_to members_path
     else
     @mentor = Mentor.new

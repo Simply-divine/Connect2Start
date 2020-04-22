@@ -2,7 +2,7 @@
 	<strong>
 		Title :
 		<%= @article.title %>
-		<strong></h1>
+		</strong></h1>
 <div class="card">
 	<div class="card-header">
 		<div class="card bg-light mycard mb-3 offset-5" style="max-width: 540px;">
@@ -30,9 +30,13 @@
 		<%= @article.description %>
 	</div>
 	<div class="card-footer">
+		<% if @article.categories.any? %>
+			<p>Categories: <%=render @article.categories%></p>
+		<% end %>
 		<%# <%= link_to 'edit current article',edit_article_path(@article),class: "btn btn-md btn-primary" if logged_in? and (current_user == @article.user || current_user.admin?) %>
 		<%# <%= link_to 'delete article', article_path(@article), class: "btn btn-md btn-danger", method: :delete, data: {confirm: 'Are you sure you want to delete the article?'} if logged_in? and (current_user == @article.user || current_user.admin?) %> 	
 		<%= link_to 'View all articles', articles_path, class: "btn btn-md btn-success" %>
+
 		<!-- </div> -->
 	</div>
 

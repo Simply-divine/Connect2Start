@@ -5,6 +5,6 @@ class Member < ApplicationRecord
   validates :ex_startup_field, presence: true
   validates :experience, presence: true
   validates :ex_startup_name, presence: true
-  
+  has_many :categories 
   # has_secure_password
 end
