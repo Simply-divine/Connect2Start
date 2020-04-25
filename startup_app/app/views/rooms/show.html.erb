@@ -21,7 +21,7 @@
               </div>
               <div class="col text-right" >
                 <small>
-                  <%= room_message.created_at.strftime("%I:%M %p-%e %B") %>
+                  <%= room_message.created_at %>
                 </small>
               </div>
             </div>
@@ -47,11 +47,14 @@
   <div class="chat-message-container">
     <div class="row no-gutters">
       <div class="col">
-        <div class="message-content">
-          <p class="mb-1" data-role="message-text"></p>
-
-          <div class="text-right">
-            <small data-role="message-date"></small>
+        <div class="message-content row">
+          <div class="col">
+            <div class="text-left" style="padding-left: 10px;padding-top: 5px" data-role="message-text">
+            </div>
+          </div>
+          <div class="col text-right" >
+            <small data-role="message-date">
+            </small>
           </div>
         </div>
       </div>

@@ -25,8 +25,8 @@ Rails.application.routes.draw do
   delete 'logout',to: 'sessions#destroy'
 
   get 'connect', to: 'rooms#index'
-  resources :rooms
+  resources :rooms, except: [:new]
   resources :messages
-
+  get 'talk/:id', to: 'rooms#talk', as: 'talk'
   mount ActionCable.server, at: '/cable'
 end

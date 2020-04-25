@@ -2,7 +2,7 @@ class RoomsController < ApplicationController
   # Loads:
   # @rooms = all rooms
   # @room = current room when applicable
-  before_action :load_entities
+  before_action :load_entities, :require_user
 
   def index
     @rooms = Room.all
@@ -12,11 +12,27 @@ class RoomsController < ApplicationController
     @room = Room.new
   end
 
-  def create
-    @room = Room.new(permitted_parameters)
+  def talk
+    @room = Room.new
+    @group = Group.new
+    @room.group_id = @group.id
+    @group.add(current_user,params[:id])
     if @room.save
       flash[:success] = "Room #{@room.name} was created successfully"
-      redirect_to rooms_path
+      redirect_to room_path(@room)
+    else
+      render 'pages/home'
+    end
+  end
+
+  def create
+    @room = Room.new(permitted_parameters)
+    @group = Group.new
+    @room.group_id = @group.id
+    @group.add(current_user)
+    if @room.save
+      flash[:success] = "Room #{@room.name} was created successfully"
+      redirect_to room_path(@room)
     else
       render :new
     end
