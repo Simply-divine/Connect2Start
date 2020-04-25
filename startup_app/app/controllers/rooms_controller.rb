@@ -6,7 +6,8 @@ class RoomsController < ApplicationController
   before_action :require_user
 
   def index
-    @rooms = Room.all
+    @groups = Group.with_member(current_user)
+    @rooms = Room.find_by(group_id: @groups.id)
   end
 
   def new
@@ -14,17 +15,23 @@ class RoomsController < ApplicationController
   end
 
   def talk
-    @room = Room.new(name: "Room #{current_user.id} #{params[:id]}")
-    @group = Group.new()
-    @room.group_id = @group.id
-    if @room.save
-      @group.room_id = @room.id
-      @group.add(current_user,User.find(params[:id]))
-      @group.save
-      flash[:success] = "Room #{@room.name} was created successfully"
+    if current_user.shares_any_group?(User.find(params[:id]))
+      @room = Room.find_by(name: "#{User.find(params[:id]).fname} #{current_user.id}")
+      @group = Group.find_by(room_id: @room.id)
       redirect_to room_path(@room)
     else
-      redirect_to root_path
+      @room = Room.new(name: "#{User.find(params[:id]).fname} #{current_user.id}")
+      @group = Group.new()
+      if @room.save
+        @group.room_id = @room.id
+        @group.add(current_user,User.find(params[:id]))
+        @group.save
+        @room.group_id = @group.id
+        flash[:success] = "Room #{@room.name} was created successfully"
+        redirect_to room_path(@room)
+      else
+        redirect_to root_path
+      end
     end
   end
 
