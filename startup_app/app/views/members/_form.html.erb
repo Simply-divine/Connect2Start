@@ -10,28 +10,25 @@
 <% end %>
 
 <%= form_for @member do |f| %>
-  
-  <div class="form-row">
-  <div class="form-group col-md-6">
-    <%= f.label :"Ex Startup Name", for: "exstname"%>
-    <%= f.text_field :ex_startup_name, class: "form-control", id: "exstname", placeholder: "Connect to Start" %>
-  </div>
-  <div class="form-group col-md-6">
-    <%= f.label :"Ex Startup Field/Desc/Info", for: "exstfield"%>
-    <%= f.text_field :ex_startup_field, class: "form-control", id: "exstfield", placeholder: "Web Application for Ex-startup Members to connect and innovate" %>
-  </div>
-  <div class="form-group col-md-6">
-    <%= f.label :"Startup experience(in ye", for: "experience"%>
-    <%= f.number_field :experience, class: "form-control", id: "experience", placeholder: "2" %>
-  </div>
-</div>
-  <div class="form-group">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="gridCheck">
-      <label class="form-check-label" for="gridCheck">
-        Check me out
-      </label>
-    </div>
-  </div>
-  <%= f.submit "Sign up", class: "btn btn-primary" %>
+	<div class="form-row">
+
+		<div class="form-group col-md-6">
+			<%= f.label :"Ex Startup Name", for: "exstname"%>
+			<%= f.text_field :ex_startup_name, class: "form-control", id: "exstname", placeholder: "Connect to Start"%>
+		</div>
+
+		<div class = "form-group col-sm-8">
+			<p> Ex-startup field: </p>
+			<%= f.collection_check_boxes :category_ids, Category.all, :id, :name do |cb| %>
+				<%= cb.label{cb.check_box(class: "checkbox") + cb.text} %></br>
+			<% end %>
+		</div>
+
+	</div>
+
+	<div class="form-row col-md-6">
+		<%= f.label :"Startup experience(in years", for: "experience"%>
+		<%= f.number_field :experience, class: "form-control", id: "experience", placeholder: "2" %>
+	</div>
+	<%= f.submit "Sign up", class: "btn btn-primary" %>
 <% end %>

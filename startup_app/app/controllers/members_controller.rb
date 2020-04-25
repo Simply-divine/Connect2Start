@@ -4,7 +4,7 @@ class MembersController < ApplicationController
   before_action  :require_user, except: [:show,:index,:new,:create]
 
   #before_action :require_same_member, only: [:edit, :update]
-  # before_action :require_admin, only: [:destroy]
+  #before_action :require_admin, only: [:destroy]
 
   def index
     @members = Member.all.page(params[:page])
@@ -15,7 +15,7 @@ class MembersController < ApplicationController
       flash[:danger] = "You need to make an account to our site first..please sign up or log in to your account"
       redirect_to members_path
     else
-    @member = Member.new
+			@member = Member.new
     end
   end
 
@@ -50,7 +50,6 @@ class MembersController < ApplicationController
 
   def destroy
     @member = Member.find(params[:id])
-    
     if @member.destroy
       flash[:danger] = "Member deleted"
       redirect_to members_path
@@ -67,7 +66,7 @@ class MembersController < ApplicationController
   end
 
   def member_params
-    params.require(:member).permit(:ex_startup_name, :ex_startup_field, :experience)
+    params.require(:member).permit(:ex_startup_name, :experience, category_ids: [])
   end
 
   def require_same_member
