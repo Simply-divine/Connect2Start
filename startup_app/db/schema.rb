@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_21_123848) do
+ActiveRecord::Schema.define(version: 2020_04_24_181932) do
 
   create_table "article_categories", force: :cascade do |t|
     t.integer "article_id"
@@ -31,10 +31,14 @@ ActiveRecord::Schema.define(version: 2020_04_21_123848) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "investor_categories", force: :cascade do |t|
+    t.integer "investor_id"
+    t.integer "category_id"
+  end
+
   create_table "investors", force: :cascade do |t|
     t.string "password_digest"
     t.integer "user_id"
-    t.string "field"
     t.integer "experience"
   end
 
@@ -48,7 +52,6 @@ ActiveRecord::Schema.define(version: 2020_04_21_123848) do
 
   create_table "mentors", force: :cascade do |t|
     t.string "password_digest"
-    t.string "field"
     t.integer "experience"
     t.integer "user_id"
   end
@@ -68,18 +71,6 @@ ActiveRecord::Schema.define(version: 2020_04_21_123848) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_rooms_on_name", unique: true
-  end
-
-  create_table "startups", force: :cascade do |t|
-    t.string "org_name"
-    t.string "contact_name"
-    t.string "org_email"
-    t.decimal "cur_emps"
-    t.decimal "phone"
-    t.string "description"
-    t.string "password_digest"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "users", force: :cascade do |t|

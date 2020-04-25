@@ -10,15 +10,21 @@
 <% end %>
 
 <%= form_for @investor do |f| %>
-    <div class="form-group col-md-6">
-      <%= f.label :"Field of investment", for: "field"%>
-      <%= f.text_field :field, class: "form-control", id: "field", placeholder: "AI/ML" %>
-    </div>
   <div class="form-group col-md-6">
     <%= f.label :"Experience of investing(in years)", for: "experience"%>
     <%= f.number_field :experience, class: "form-control", id: "experience", placeholder: "2" %>
-  </div>
-  <%= f.submit "Sign up", class: "btn btn-primary" %>
+	</div>
+	<div class = "form-group col-md-6">
+	<p> Fields of Interest: </p>
+   <div class = "col-sm-8">
+      <%= f.collection_check_boxes :category_ids, Category.all, :id, :name do |cb| %>
+				<%= cb.label{cb.check_box(class: "checkbox") + cb.text} %></br>
+      <% end %>
+	 </div>
+	</div>
+	 <div>
+		 <%= f.submit "Sign up", class: "btn btn-primary" %>
+	 </div>
 <% end %>
 
 

@@ -18,17 +18,10 @@
       <li class="nav-item ">
       <%= link_to 'Startups', members_path,class: "nav-link" %>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Categories
-        </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <%= link_to 'All Categories', categories_path , class: 'dropdown-item'%>
-              <% Category.all.each do |category| %>
-                <%= link_to category.name, category_path(category), class: 'dropdown-item' %>
-              <% end %>
-          </div>
-      </li> 
+      <li class="nav-item ">
+          <%= link_to 'Categories', categories_path, class: "nav-link" %>
+      </li>
+       
     </ul>
     <form class="form-inline my-2 my-lg-0">
     

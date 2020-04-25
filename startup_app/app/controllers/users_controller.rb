@@ -11,10 +11,11 @@ class UsersController < ApplicationController
     def create
         @user = User.new(user_params)
         if @user.save
-          flash[:success] = "Object successfully created"
+          flash[:success] = "Account created"
+					session[:user_id] = @user.id
           redirect_to articles_path
         else
-          flash[:error] = "Something went wrong"
+          flash[:error] = "Invalid credentials"
           render 'new'
         end
     end
