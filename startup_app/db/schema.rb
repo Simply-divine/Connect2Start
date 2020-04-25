@@ -10,16 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2020_04_25_043625) do
-=======
-ActiveRecord::Schema.define(version: 2020_04_24_181932) do
+ActiveRecord::Schema.define(version: 2020_04_25_103622) do
 
   create_table "article_categories", force: :cascade do |t|
     t.integer "article_id"
     t.integer "category_id"
   end
->>>>>>> upstream/master
 
   create_table "articles", force: :cascade do |t|
     t.string "title"
@@ -29,7 +25,12 @@ ActiveRecord::Schema.define(version: 2020_04_24_181932) do
     t.integer "user_id"
   end
 
-<<<<<<< HEAD
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "group_memberships", force: :cascade do |t|
     t.string "member_type", null: false
     t.integer "member_id", null: false
@@ -45,20 +46,14 @@ ActiveRecord::Schema.define(version: 2020_04_24_181932) do
   end
 
   create_table "groups", force: :cascade do |t|
-    t.string "type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-=======
-  create_table "categories", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer "room_id"
   end
 
   create_table "investor_categories", force: :cascade do |t|
     t.integer "investor_id"
     t.integer "category_id"
->>>>>>> upstream/master
   end
 
   create_table "investors", force: :cascade do |t|
