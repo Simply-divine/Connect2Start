@@ -1,10 +1,12 @@
 <blockquote class="blockquote text-center">
-  <p class="mb-0">User</p>
+  <p class="mb-0 offset-1">User</p>
 </blockquote>
 <div class = "container pagination justify-content-center">
   <%= will_paginate @users %>
 </div>
+<div class = "offset-5">
 <%= render 'user', obj: @users %>
+</div>
 <div class = "container pagination justify-content-center">
   <%= will_paginate @users %>
 </div>
