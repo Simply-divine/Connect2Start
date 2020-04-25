@@ -62,12 +62,21 @@ ActiveRecord::Schema.define(version: 2020_04_25_103622) do
     t.integer "experience"
   end
 
+  create_table "member_categories", force: :cascade do |t|
+    t.integer "member_id"
+    t.integer "category_id"
+  end
+
   create_table "members", force: :cascade do |t|
     t.string "ex_startup_name"
-    t.string "ex_startup_field"
     t.string "password_digest"
     t.integer "experience"
     t.integer "user_id"
+  end
+
+  create_table "mentor_categories", force: :cascade do |t|
+    t.integer "mentor_id"
+    t.integer "category_id"
   end
 
   create_table "mentors", force: :cascade do |t|
