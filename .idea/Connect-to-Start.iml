@@ -85,6 +85,7 @@
     <orderEntry type="library" scope="PROVIDED" name="nokogiri (v1.10.9, ruby-2.6.5-p114) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="parallel (v1.19.1, ruby-2.6.5-p114) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="parser (v2.7.0.4, ruby-2.6.5-p114) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="pg (v1.2.3, ruby-2.6.5-p114) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="phonelib (v0.6.43, ruby-2.6.5-p114) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="pkg-config (v1.4.1, ruby-2.6.5-p114) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="popper_js (v1.16.0, ruby-2.6.5-p114) [gem]" level="application" />

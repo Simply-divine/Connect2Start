@@ -28,5 +28,6 @@ Rails.application.routes.draw do
   resources :rooms, except: [:new]
   resources :messages
   get 'talk/:id', to: 'rooms#talk', as: 'talk'
+  resources :categories
   mount ActionCable.server, at: '/cable'
 end

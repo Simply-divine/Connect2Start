@@ -65,7 +65,7 @@ class InvestorsController < ApplicationController
   end
 
   def investor_params
-    params.require(:investor).permit(:field, :experience)
+		params.require(:investor).permit(:experience, category_ids: [])
   end
 
   def require_same_investor

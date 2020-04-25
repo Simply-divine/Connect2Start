@@ -132,6 +132,9 @@ GEM
       mini_portile2 (~> 2.4.0)
     nokogiri (1.10.9-x86-mingw32)
       mini_portile2 (~> 2.4.0)
+    pg (1.2.3)
+    pg (1.2.3-x64-mingw32)
+    pg (1.2.3-x86-mingw32)
     phonelib (0.6.42)
     popper_js (1.16.0)
     public_suffix (4.0.3)
@@ -218,8 +221,6 @@ GEM
     turbolinks-source (5.2.0)
     tzinfo (1.2.6)
       thread_safe (~> 0.1)
-    tzinfo-data (1.2019.3)
-      tzinfo (>= 1.0.0)
     uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
     web-console (3.7.0)
@@ -259,6 +260,7 @@ DEPENDENCIES
   jquery
   jquery-rails
   listen (>= 3.0.5, < 3.2)
+  pg
   phonelib
   puma (~> 3.11)
   rails (~> 5.2.4, >= 5.2.4.1)

@@ -1,0 +1,12 @@
+<h1 align="center">
+	<strong>
+		Name :
+		<%= @category.name %>
+	</strong>
+</h1>
+<% if @category.articles.any? %>
+	<h2 align = "center"> Articles related to <%= @category.name %>: </h1>
+	<%= render 'articles/article', obj: @category.articles %>
+<% else %>
+	<h2 align = "center"> Sorry no articles of this category currently :/ </h2>
+<% end %>	

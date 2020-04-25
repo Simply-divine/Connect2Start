@@ -17,7 +17,11 @@
       </li> 
       <li class="nav-item ">
       <%= link_to 'Startups', members_path,class: "nav-link" %>
-      </li> 
+      </li>
+      <li class="nav-item ">
+          <%= link_to 'Categories', categories_path, class: "nav-link" %>
+      </li>
+       
     </ul>
     <form class="form-inline my-2 my-lg-0">
     
@@ -40,7 +44,6 @@
       <% else %>
         <%= link_to 'Log In', login_path,class: "nav-link"%>
         <%= link_to 'Sign up', signup_path,class: "nav-link"%>
-        
       <% end %>
     </form>
   <%# form class="form-inline my-2 my-lg-0">
