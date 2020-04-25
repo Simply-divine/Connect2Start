@@ -91,6 +91,7 @@ GEM
     ffi (1.12.2-x86-mingw32)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    groupify (0.9.0)
     hirb (0.7.3)
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
@@ -253,6 +254,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   chromedriver-helper
   coffee-rails (~> 4.2)
+  groupify
   hirb
   jbuilder (~> 2.5)
   jquery

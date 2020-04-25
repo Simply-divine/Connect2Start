@@ -2,21 +2,40 @@ class RoomsController < ApplicationController
   # Loads:
   # @rooms = all rooms
   # @room = current room when applicable
-  before_action :load_entities
+  before_action :load_entities, except: [:talk]
+  before_action :require_user
 
   def index
     @rooms = Room.all
   end
 
   def new
-    @room = Room.new
+    @room = Room.new()
+  end
+
+  def talk
+    @room = Room.new(name: "Room #{current_user.id} #{params[:id]}")
+    @group = Group.new()
+    @room.group_id = @group.id
+    if @room.save
+      @group.room_id = @room.id
+      @group.add(current_user,User.find(params[:id]))
+      @group.save
+      flash[:success] = "Room #{@room.name} was created successfully"
+      redirect_to room_path(@room)
+    else
+      redirect_to root_path
+    end
   end
 
   def create
     @room = Room.new(permitted_parameters)
+    @group = Group.new
+    @room.group_id = @group.id
+    @group.add(current_user)
     if @room.save
       flash[:success] = "Room #{@room.name} was created successfully"
-      redirect_to rooms_path
+      redirect_to room_path(@room)
     else
       render :new
     end

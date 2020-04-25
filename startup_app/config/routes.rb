@@ -24,10 +24,10 @@ Rails.application.routes.draw do
   post 'login',to: 'sessions#create'
   delete 'logout',to: 'sessions#destroy'
 
-  get 'connect', to: 'rooms#index'
+  get 'connect', to: 'rooms#index', as: 'connect'
   resources :rooms
   resources :messages
-
+  get 'talk/:id', to: 'rooms#talk', as: 'talk'
   resources :categories
   mount ActionCable.server, at: '/cable'
 end

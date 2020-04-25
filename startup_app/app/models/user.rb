@@ -4,6 +4,8 @@ class User < ApplicationRecord
   has_one :investor
   has_one :mentor
   has_one :member
+  groupify :named_group_member
+  groupify :group_member
   before_save { self.email = email.downcase }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 

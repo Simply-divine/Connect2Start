@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_25_053509) do
+ActiveRecord::Schema.define(version: 2020_04_25_103622) do
 
   create_table "article_categories", force: :cascade do |t|
     t.integer "article_id"
@@ -29,6 +29,26 @@ ActiveRecord::Schema.define(version: 2020_04_25_053509) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "group_memberships", force: :cascade do |t|
+    t.string "member_type", null: false
+    t.integer "member_id", null: false
+    t.string "group_type"
+    t.integer "group_id"
+    t.string "group_name"
+    t.string "membership_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_name"], name: "index_group_memberships_on_group_name"
+    t.index ["group_type", "group_id"], name: "index_group_memberships_on_group_type_and_group_id"
+    t.index ["member_type", "member_id"], name: "index_group_memberships_on_member_type_and_member_id"
+  end
+
+  create_table "groups", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "room_id"
   end
 
   create_table "investor_categories", force: :cascade do |t|
@@ -79,6 +99,7 @@ ActiveRecord::Schema.define(version: 2020_04_25_053509) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "group_id"
     t.index ["name"], name: "index_rooms_on_name", unique: true
   end
 
