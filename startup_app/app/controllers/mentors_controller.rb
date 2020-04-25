@@ -66,7 +66,7 @@ class MentorsController < ApplicationController
   end
 
   def mentor_params
-    params.require(:mentor).permit(:field,:experience)
+    params.require(:mentor).permit(:experience, category_ids: [])
   end
 
   def require_same_mentor

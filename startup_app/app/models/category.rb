@@ -5,4 +5,8 @@ class Category < ApplicationRecord
     has_many :investors, through: :investor_categories
     has_many :article_categories
     has_many :articles, through: :article_categories
+    has_many :mentor_categories
+    has_many :mentors, through: :mentor_categories
+    has_many :member_categories
+    has_many :members, through: :member_categories
 end

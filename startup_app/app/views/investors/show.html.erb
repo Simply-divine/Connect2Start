@@ -19,7 +19,7 @@
 			<% @investor.categories.each do |category| %>
 				<span class = "badge badge-info"><%= link_to category.name, category_path(category), class: "card-link", style: "color:white" %></span>
 			<% end %>
-		<%= link_to 'Chat with investor',rooms_path,class: "badge badge-primary", style: "color:white" %>
+		<%= link_to 'Chat with investor',talk_path(@investor.id),class: "badge badge-primary", style: "color:white" %>
   </div>
 </div>
 <%= link_to "[ back to investors lists ]",investors_path %>

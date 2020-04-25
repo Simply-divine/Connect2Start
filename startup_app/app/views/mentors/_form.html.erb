@@ -12,20 +12,16 @@
 <%= form_for @mentor do |f| %>
  
   <div class="form-group col-md-6">
-      <%= f.label :"Field of mentorship", for: "field"%>
-      <%= f.text_field :field, class: "form-control", id: "field", placeholder: "AI/ML" %>
-    </div>
-  <div class="form-group col-md-6">
     <%= f.label :"Experience of mentorship(in years)", for: "experience"%>
     <%= f.number_field :experience, class: "form-control", id: "experience", placeholder: "2" %>
   </div>
-  <div class="form-group">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="gridCheck">
-      <label class="form-check-label" for="gridCheck">
-        Check me out
-      </label>
-    </div>
-  </div>
-  <%= f.submit "Sign up", class: "btn btn-primary" %>
+	<div class = "form-group col-md-6">
+		<p> Fields of Interest: </p>
+		<div class = "col-sm-8">
+			<%= f.collection_check_boxes :category_ids, Category.all, :id, :name do |cb| %>
+				<%= cb.label{cb.check_box(class: "checkbox") + cb.text} %></br>
+			<% end %>
+		</div>
+	</div>
+	<%= f.submit "Sign up", class: "btn btn-primary" %>
 <% end %>

@@ -1,23 +1,26 @@
 <blockquote class="blockquote text-center">
   <p class="mb-0">Welcome <%= @member.user.fname.upcase %></p>
 </blockquote>
-<%#= render 'member', obj: @member %>
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
+<div class="card " style="width: 18rem;">
+	<div class = "card-header">
     <div class= "card-title h5">
       <%= @member.user.fname.upcase%> <%=@member.user.lname.upcase %>
     </div>
-    <p><%#= @member.description, class: "card-text" %></p>
+	</div>	
+	<div class="card-body">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Ex-startup-name: <%= @member.ex_startup_name %></li>
+      <li class="list-group-item">Ex-startup-email: <%= @member.user.email %></li>
+      <li class="list-group-item">Ph No. <%= @member.user.phone.to_i %></li>
+    </ul>
+	</div>
+	<div class="card-footer">
+			Fields of experience
+			<% @member.categories.each do |category| %>
+				<span class = "badge badge-info"><%= link_to category.name, category_path(category), class: "card-link", style: "color:white" %></span>
+			<% end %>
+			<br>
+		<%= link_to 'Chat with member',talk_path(@member.id),class: "badge badge-primary", style: "color:white" %>
   </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item"><%= @member.ex_startup_name %></li>
-    <li class="list-group-item"><%= @member.ex_startup_field %></li>
-    <li class="list-group-item"><%= @member.user.email %></li>
-    <li class="list-group-item"><%= @member.user.phone %></li>
-    <li class="list-group-item"><%= @member.user.dob %></li>
-  </ul>
-  <!--    <div class="card-body">-->
-  <!--      <a href="#" class="card-link">Card link</a>-->
-  <!--      <a href="#" class="card-link">Another link</a>-->
-  <!--    </div>-->
 </div>
+<%= link_to "[ back to members lists ]",members_path %>

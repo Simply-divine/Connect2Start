@@ -4,6 +4,8 @@ class Member < ApplicationRecord
   validates :user_id, presence: true, uniqueness: true
   validates :experience, presence: true
   validates :ex_startup_name, presence: true
-  has_many :categories 
+	has_many :member_categories
+  has_many :excategories, through: :member_categories
+	has_many :categories, through: :member_categories
   # has_secure_password
 end
