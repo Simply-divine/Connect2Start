@@ -1,10 +1,10 @@
-<p class="offset-1 center">
+<p class=" center">
       <%= link_to  "Join our team of mentors", mentors_signup_path %>
   </p>
 <div class = "container pagination justify-content-center">
   <%= will_paginate @mentors %>
 </div>
-<div>
+<div class="center">
 <%= render 'mentor', obj: @mentors %>
 </div>
 <div class = "container pagination justify-content-center">
