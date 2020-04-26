@@ -7,7 +7,9 @@
 - [Summary](#summary)
 - [Getting Started](#getting-started)
 - [Installation Options](#installation-options)
+- [Contributors](#contributors)
 - [Contributing](#contributing)
+- [License](#license)
 
 
 ## Philosophy 		
@@ -24,6 +26,17 @@ We introduce you a  **real time Web App**  to  **connect**  with  **Investors, M
 
 A simple but effective solution. What's more? It's  **open source**..
 
+## Installation Requirements:
+You need to install ruby and rails first.
+- [Ruby Installation guide](https://www.ruby-lang.org/en/documentation/installation/) .
+- [Rails Installation guide](https://guides.rubyonrails.org/v5.0/getting_started.html).
+
+The version requirements are
+
+- Ruby ( >= 2.6.3)
+- Rails( >= 5.2.4.2)
+
+
 ## Download options
 
 - Clone or fork this repository.
@@ -38,16 +51,14 @@ A simple but effective solution. What's more? It's  **open source**..
 				rails s
 - Now you can run this app locally.
 
-## Installation Requirements:
-You need to install ruby and rails first.
-- [Ruby Installation guide](https://www.ruby-lang.org/en/documentation/installation/) .
-- [Rails Installation guide](https://guides.rubyonrails.org/v5.0/getting_started.html).
-
-The version requirements are
-
-- Ruby ( >= 2.6.3)
-- Rails( >= 5.2.4.2)
+## Contributors
+- [Smit Patel](https://github.com/C2OO13)
+- [Hardik Upadhyay](https://github.com/Simply-divine)
 
 ## Contributing
 
-	 visit the guidelines for [contributing](CONTRIBUTING.md)
+visit the guidelines for [contributing](https://github.com/Simply-divine/Starter_Rails/blob/master/CONTRIBUTING.md)
+
+## License
+This repository is under [MIT License](https://github.com/Simply-divine/Starter_Rails/blob/master/LICENSE)
+
