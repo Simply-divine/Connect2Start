@@ -48,7 +48,7 @@ class InvestorsController < ApplicationController
 
   def destroy
     @investor = Investor.find(params[:id])
-    byebug
+
     if @investor.destroy
       flash[:danger] = "Investor deleted"
       redirect_to investors_path

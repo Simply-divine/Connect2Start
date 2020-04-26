@@ -21,6 +21,9 @@
 			<% end %>
 			<br>
 		<%= link_to 'Chat with member',talk_path(@member.id),class: "badge badge-primary", style: "color:white" %>
+		<% if logged_in_user? && @member.user == current_user %>
+			<%= link_to 'Edit Your Profile', edit_member_path(@member), class: "badge badge-primary" %>
+		<% end %>
   </div>
 </div>
 <%= link_to "[ back to members lists ]",members_path %>
