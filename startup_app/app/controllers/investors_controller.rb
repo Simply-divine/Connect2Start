@@ -34,7 +34,6 @@ class InvestorsController < ApplicationController
   end
 
   def update
-    @investor = Investor.find(params[:id])
     if @investor.update(investor_params)
       flash[:success] = "Successfully updated investor!"
       redirect_to investors_path
@@ -49,6 +48,7 @@ class InvestorsController < ApplicationController
 
   def destroy
     @investor = Investor.find(params[:id])
+    byebug
     if @investor.destroy
       flash[:danger] = "Investor deleted"
       redirect_to investors_path
