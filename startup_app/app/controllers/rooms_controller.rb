@@ -6,7 +6,10 @@ class RoomsController < ApplicationController
 
   def index
     @groups = Group.with_member(current_user)
-    @rooms = Room.find_by(group_id: @groups.ids)
+    @rooms = []
+    @groups.each do |group|
+      @rooms << Room.find_by(group_id: group.id)
+    end
   end
   #
   # def new
@@ -33,8 +36,8 @@ class RoomsController < ApplicationController
       if @room.save
         @group.room_id = @room.id
         @group.add(current_user,User.find(params[:id]))
-        @group.save
         @room.group_id = @group.id
+        @group.save
         flash[:success] = "Room #{@room.name} was created successfully"
         redirect_to room_path(@room)
       else
