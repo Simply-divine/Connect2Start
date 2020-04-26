@@ -20,6 +20,7 @@
 		<div class = "card-footer"> 
 			<%= link_to "Edit",edit_article_path(article),class: "btn btn-lg btn-primary"  %>
 			<td> <%= link_to "delete",article_path(article),method: :delete,data: {confirm: 'Are you sure?'},class: "btn btn-danger btn-lg" %>
+			<%= link_to "Chat with article author", talk_path(article.user.id), class: "btn btn-lg btn-primary" %>	
 		</div>
 	</div>
 <% end %>

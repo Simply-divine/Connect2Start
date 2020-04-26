@@ -4,7 +4,7 @@
     <div class="col-md-5">
 			<%= link_to gravatar_for(user,size: 245),user_path(user) %>
     </div>
-    <div class="col-md-5 offset-1">
+    <div class="col-md-5 offset-1 vertical-align: center">
       <div class="card-body my-auto align-items-center">
 				<h1 class="card-title center justify-content-center" ><%= user.fname %></h1>
 				<div>
@@ -12,13 +12,9 @@
 				<small class = "text-muted"><%= user.email %></small></p>
         </div> 
         <div>
-                <p class = "card-text  center justify-content-center">Phone No:</p>
-                <small class = "text-muted"><%= user.phone %></small></p>
+                <p class = "card-text  center justify-content-center">
+                <small class = "text-muted">Phone No: <%= user.phone.to_i %></small></p>
         </div> 
-
-                <small class = "text-muted"><%= user.dob %></small></p>
-              
-
                 <p class = "card-text center"><small class = "text-muted"> User has <%= pluralize(user.articles.count,"article") %></small></p>
       </div>
     </div>
