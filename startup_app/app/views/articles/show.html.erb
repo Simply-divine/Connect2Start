@@ -7,13 +7,13 @@
 	<div class="card-header">
 		<div class="card bg-light mycard mb-3 offset-5" style="max-width: 540px;">
 			<h2	>Created by:</h2>
-			<div class="row">
-				<div class="col-md-8">
-					<%= link_to gravatar_for(@article.user,size: 130),user_path(@article.user) %>
+			<div class="col">
+				<div class="row">
+					<%= link_to gravatar_for(@article.user,size: 190),user_path(@article.user) %>
 				</div>
 			</div>
-			<div class = "row">
-				<div class="col-md-8">
+			<div class = "col">
+				<div class="row">
 					<div class="card-body">
 						<h1 class="card-title"><%= @article.user.fname %></h1>
 						<p class="card-text" ><small class = "text-muted">Contact <%= @article.user.fname %>:</small>
@@ -33,9 +33,9 @@
 		<% if @article.categories.any? %>
 			<p>Categories: <%=render @article.categories%></p>
 		<% end %>
-		<%# <%= link_to 'edit current article',edit_article_path(@article),class: "btn btn-md btn-primary" if logged_in? and (current_user == @article.user || current_user.admin?) %>
-		<%# <%= link_to 'delete article', article_path(@article), class: "btn btn-md btn-danger", method: :delete, data: {confirm: 'Are you sure you want to delete the article?'} if logged_in? and (current_user == @article.user || current_user.admin?) %> 	
-		<%= link_to 'View all articles', articles_path, class: "btn btn-md btn-success" %>
+		 <%= link_to 'edit current article',edit_article_path(@article),class: "btn btn-lg btn-primary" if logged_in_user? and (current_user == @article.user || current_user.admin?) %>
+		 <%= link_to 'delete article', article_path(@article), class: "btn btn-lg btn-danger", method: :delete, data: {confirm: 'Are you sure you want to delete the article?'} if logged_in_user? and (current_user == @article.user || current_user.admin?) %> 	
+		<%= link_to 'View all articles', articles_path, class: "btn btn-lg btn-success" %>
 
 		<!-- </div> -->
 	</div>

@@ -2355,6 +2355,7 @@ textarea {
   appearance: none; }
 
 textarea {
+  font-size: 2rem !important;
   min-height: 65px;
   padding-top: 6px;
   padding-bottom: 6px; }
@@ -2539,3 +2540,88 @@ label > .label-body {
 .fonts-loaded input[type="reset"],
 .fonts-loaded input[type="button"] {
   font-family: "Open Sans"; }
+
+/*General style*/
+  .custom-checkbox label, .custom-radio label {
+    position: relative;
+    cursor: pointer;
+    color: #666;
+    font-size: 30px;
+  }
+ .custom-checkbox input[type="checkbox"] ,.custom-radio input[type="radio"] {
+    position: absolute;
+    right: 9000px;
+  }
+   /*Custom checkboxes style*/
+  .custom-checkbox input[type="checkbox"]+.label-text:before {
+    content: "\f0c8";
+    font-family: "Font Awesome 5 Pro";
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    width: 1em;
+    display: inline-block;
+    margin-right: 5px;
+  }
+  .custom-checkbox input[type="checkbox"]:checked+.label-text:before {
+    content: "\f14a";
+    color: #2980b9;
+    animation: effect 250ms ease-in;
+  }
+  .custom-checkbox input[type="checkbox"]:disabled+.label-text {
+    color: #aaa;
+  }
+  .custom-checkbox input[type="checkbox"]:disabled+.label-text:before {
+    content: "\f0c8";
+    color: #ccc;
+  }
+
+   /*Custom checkboxes style*/
+  .custom-radio input[type="radio"]+.label-text:before {
+    content: "\f111";
+    font-family: "Font Awesome 5 Pro";
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    width: 1em;
+    display: inline-block;
+    margin-right: 5px;
+  }
+
+  .custom-radio input[type="radio"]:checked+.label-text:before {
+    content: "\f192";
+    color: #8e44ad;
+    animation: effect 250ms ease-in;
+  }
+
+  .custom-radio input[type="radio"]:disabled+.label-text {
+    color: #aaa;
+  }
+
+  .custom-radio input[type="radio"]:disabled+.label-text:before {
+    content: "\f111";
+    color: #ccc;
+  }
+
+  @keyframes effect {
+    0% {
+      transform: scale(0);
+    }
+    25% {
+      transform: scale(1.3);
+    }
+    75% {
+      transform: scale(1.4);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
