@@ -1,29 +1,36 @@
-<blockquote class="blockquote text-center">
-  <p class="mb-0">Welcome <%= @member.user.fname.upcase %></p>
-</blockquote>
-<div class="card " style="width: 18rem;">
+
+<div class="card center" style="width: 30rem;">
 	<div class = "card-header">
-    <div class= "card-title h5">
-      <%= @member.user.fname.upcase%> <%=@member.user.lname.upcase %>
-    </div>
+    <div class= "card-title ">
+			<strong>
+      	<%= @member.user.fname.upcase%> <%=@member.user.lname.upcase %>
+			</strong>
+		</div>
 	</div>	
 	<div class="card-body">
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">Ex-startup-name: <%= @member.ex_startup_name %></li>
-      <li class="list-group-item">Ex-startup-email: <%= @member.user.email %></li>
-      <li class="list-group-item">Ph No. <%= @member.user.phone.to_i %></li>
+      <li class="list-group-item">Startup-name: <%= @member.ex_startup_name %></li>
+      <li class="list-group-item">Startup-email: <%= @member.user.email %></li>
+      <li class="list-group-item">Phone No.: <%= @member.user.phone.to_i %></li>
     </ul>
 	</div>
 	<div class="card-footer">
-			Fields of experience
+			Startup Category<br>
 			<% @member.categories.each do |category| %>
-				<span class = "badge badge-info"><%= link_to category.name, category_path(category), class: "card-link", style: "color:white" %></span>
+				<span class = "badge badge-info">
+					<%= link_to category.name, category_path(category), class: "card-link", style: "color:white" %>
+				</span>
 			<% end %>
-			<br>
-		<%= link_to 'Chat with member',talk_path(@member.id),class: "badge badge-primary", style: "color:white" %>
+		<br>
+		<%= link_to 'Chat with startup',talk_path(@member.id),class: "badge badge-primary", style: "color:white" %>
+		<br>
 		<% if logged_in_user? && @member.user == current_user %>
 			<%= link_to 'Edit Your Profile', edit_member_path(@member), class: "badge badge-primary" %>
 		<% end %>
+		
+		
   </div>
 </div>
-<%= link_to "[ back to members lists ]",members_path %>
+<div class="center">
+<%= link_to "[ Back to Members listing ]",members_path %>
+</div>

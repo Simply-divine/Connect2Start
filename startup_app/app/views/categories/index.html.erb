@@ -1,6 +1,6 @@
 <h1 align="center">Listing all categories</h1>
 <% @categories.each do |category| %>
-	<div class = "card card-list w-75 offset-1 ">
+	<div class = "card card-list offset-3 " style="width: 500px">
 		<div class ="card-header" > <%= link_to category.name, category_path(category) %>
 		</div>
 		<div class = "card-footer"> 

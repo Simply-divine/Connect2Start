@@ -13,12 +13,12 @@
 	<div class="form-row">
 
 		<div class="form-group col-md-6">
-			<%= f.label :"Ex Startup Name", for: "exstname"%>
+			<%= f.label :"Startup Name", for: "exstname"%>
 			<%= f.text_field :ex_startup_name, class: "form-control", id: "exstname", placeholder: "Connect to Start"%>
 		</div>
 
 		<div class = "form-group col-sm-8">
-			<p> Ex-startup field: </p>
+			<p> Startup field: </p>
 			<%= f.collection_check_boxes :category_ids, Category.all, :id, :name do |cb| %>
 				<%= cb.label{cb.check_box(class: "checkbox") + cb.text} %></br>
 			<% end %>
@@ -27,7 +27,7 @@
 	</div>
 
 	<div class="form-row col-md-6">
-		<%= f.label :"Startup experience(in years", for: "experience"%>
+		<%= f.label :"Startup founded in (year)", for: "experience"%>
 		<%= f.number_field :experience, class: "form-control", id: "experience", placeholder: "2" %>
 	</div>
 	<%= f.submit class: "btn btn-primary" %>

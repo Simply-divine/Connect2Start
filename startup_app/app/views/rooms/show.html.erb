@@ -4,7 +4,7 @@
 
 <div class="row">
   <div class="col-12 col-md-3">
-    <%= render partial: 'rooms' %>
+    <%= render 'rooms' %>
   </div>
 
   <div class="col"  style="width: 40%;">
@@ -32,13 +32,13 @@
     </div>
 
     <%= form_with model: @message, remote: true, id: "form_enter"  do |form| %>
-      <div class="input-group mb-3">
-        <%= form.text_field :message, class: 'chat-input', id: "input_msg", autofocus: true %>
-        <div class="input-group-append">
-          <%= form.submit "Send", class: 'btn btn-primary chat-input', id: "button" %>
-        </div>
-      </div>
 
+      <div class="input-group mb-3">
+        <%= form.text_field :message, class: 'chat-input', id: "input_msg", style: "width: 800px",autofocus: true %>
+      </div>
+      <div class="offset-4">
+          <%= form.submit "Send", class: 'btn btn-primary btn-sm chat-input offset-2', id: "button" %>
+      </div>
       <%= form.number_field :room_id, class:"invisible" %>
     <% end %>
   </div>
