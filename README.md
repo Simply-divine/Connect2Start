@@ -57,7 +57,7 @@ The version requirements are
 
 ## Contributing
 
-visit the guidelines for [contributing](https://github.com/Simply-divine/Starter_Rails/blob/master/CONTRIBUTING.md)
+Visit the guidelines for [contributing](https://github.com/Simply-divine/Starter_Rails/blob/master/CONTRIBUTING.md)
 
 ## License
 This repository is under [MIT License](https://github.com/Simply-divine/Starter_Rails/blob/master/LICENSE)
