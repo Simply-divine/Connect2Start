@@ -25,7 +25,8 @@ Rails.application.routes.draw do
   delete 'logout',to: 'sessions#destroy'
 
   get 'connect', to: 'rooms#index', as: 'connect'
-  resources :rooms
+  get 'rooms', to: 'rooms#index', as: 'rooms'
+  resources :rooms, except: [:index, :new, :create]
   resources :messages
   get 'talk/:id', to: 'rooms#talk', as: 'talk'
   resources :categories
