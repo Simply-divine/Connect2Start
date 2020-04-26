@@ -20,6 +20,9 @@
 			</span>
 		<% end %><br>
 		<%= link_to 'Chat with investor', talk_path(@investor.id),class: "badge badge-primary", style: "color:white" %><br>
+		<% if logged_in_user? && @investor.user == current_user %>
+			<%= link_to 'Edit Your Profile', investor_path(@investor.id), class: "btn btn-md btn-primary" %>
+		<% end %>
 	</div>
 </div>
 <br>
