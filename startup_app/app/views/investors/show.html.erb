@@ -1,13 +1,11 @@
-<blockquote class="blockquote ">
-  <p class="mb-0"><%= @investor.user.fname.upcase %>'s profile</p>
-</blockquote>
-<%#= render 'investor', obj: @investor %>
-<div class="card " style="width: 18rem;">
+<div class="card center" style="width: 30rem;">
 	<div class = "card-header">
-    <div class= "card-title h5">
-      <%= @investor.user.fname.upcase%> <%=@investor.user.lname.upcase %>
-    </div>
-	</div>	
+		<div class= "card-title">
+			<strong>
+			<%= @investor.user.fname.upcase%> <%= @investor.user.lname.upcase %>
+		</strong>
+		</div>
+	</div>
 	<div class="card-body">
 		<ul class="list-group list-group-flush">
 			<li class="list-group-item"> Email: <%= @investor.user.email %></li>
@@ -15,11 +13,16 @@
 		</ul>
 	</div>
 	<div class="card-footer">
-			Fields of Interests
-			<% @investor.categories.each do |category| %>
-				<span class = "badge badge-info"><%= link_to category.name, category_path(category), class: "card-link", style: "color:white" %></span>
-			<% end %>
-		<%= link_to 'Chat with investor',talk_path(@investor.id),class: "badge badge-primary", style: "color:white" %>
-  </div>
+		Fields of Interests
+		<% @investor.categories.each do |category| %>
+			<span class = "badge badge-info">
+				<%= link_to category.name, category_path(category), class: "card-link", style: "color:white" %>
+			</span>
+		<% end %><br>
+		<%= link_to 'Chat with investor', talk_path(@investor.id),class: "badge badge-primary", style: "color:white" %><br>
+	</div>
 </div>
-<%= link_to "[ back to investors lists ]",investors_path %>
+<br>
+<div class="text-center">
+<%= link_to "[ Back to Investors listing ]",investors_path %>
+</div>

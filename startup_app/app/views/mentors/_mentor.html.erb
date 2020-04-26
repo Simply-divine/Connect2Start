@@ -1,23 +1,23 @@
 <% obj.each do |mentor| %>
-  <div class="card offset-5 center" style = "width: 30rem" >
-    <div class="card-header">
-			 	<strong> <%= mentor.user.fname.upcase%> <%=mentor.user.lname.upcase %> </strong>
-				<p><%#= mentor.description, class: "card-text" %></p>
-    </div>
-		<div>
+	<div class="card center" style="width: 30rem;">
+		<div class = "card-header">
+			<div class= "card-title" >
+				<strong>
+					<%= mentor.user.fname.upcase%> <%=mentor.user.lname.upcase %>
+				</strong>
+			</div>
+		</div>
+		<div class="card-body">
 			<ul class="list-group list-group-flush">
-				<li class="list-group-item"> Email me at: <%= mentor.user.email %></li>
-				<li class="list-group-item"> Contact no: <%= mentor.user.phone.to_i %></li>
+				<li class="list-group-item"> Email: <%= mentor.user.email %></li>
 			</ul>
 		</div>
-			
 		<div class="card-footer">
 			Fields of Interests
 			<% mentor.categories.each do |category| %>
 				<span class = "badge badge-info"><%= link_to category.name, category_path(category), class: "card-link", style: "color:white" %></span>
-			<% end %>
-			<br>
-			<%= link_to 'Chat with mentor',talk_path(mentor.id),class: "badge badge-primary", style: "color:white" %><br>
+			<% end %><br>
+			<%= link_to 'Chat with mentor', talk_path(mentor.id),class: "badge badge-primary", style: "color:white" %><br>
 			<%= link_to 'Show mentor profile',mentor_path(mentor) %>
 		</div>
 	</div>

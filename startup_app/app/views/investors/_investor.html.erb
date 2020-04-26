@@ -1,21 +1,22 @@
 <% obj.each do |investor| %>
-<div class="card " style="width: 30rem;">
+<div class="card center" style="width: 30rem;">
 	<div class = "card-header">
-    <div class= "card-title h5">
-      <%= investor.user.fname.upcase%> <%=investor.user.lname.upcase %>
-    </div>
+    <div class= "card-title" >
+			<strong>
+      	<%= investor.user.fname.upcase%> <%=investor.user.lname.upcase %>
+			</strong>
+		</div>
 	</div>	
 	<div class="card-body">
 		<ul class="list-group list-group-flush">
 			<li class="list-group-item"> Email: <%= investor.user.email %></li>
-			<li class="list-group-item"> Phone:  <%= investor.user.phone.to_i %></li>
 		</ul>
 	</div>
 	<div class="card-footer">
 			Fields of Interests
 			<% investor.categories.each do |category| %>
 				<span class = "badge badge-info"><%= link_to category.name, category_path(category), class: "card-link", style: "color:white" %></span>
-			<% end %>
+			<% end %><br>
 			<%= link_to 'Chat with investor', talk_path(investor.id),class: "badge badge-primary", style: "color:white" %><br>
 		<%= link_to 'Show investor profile',investor_path(investor) %>
   </div>

@@ -1,25 +1,25 @@
-<blockquote class="blockquote text-center">
-  <p class="mb-0">Welcome <%= @mentor.user.fname.upcase %></p>
-</blockquote>
-<div class="card " style="width: 18rem;">
+<div class="card center" style="width: 30rem;">
 	<div class = "card-header">
-    <div class= "card-title h5">
-      <%= @mentor.user.fname.upcase%> <%=@mentor.user.lname.upcase %>
-    </div>
-	</div>	
+		<div class= "card-title" >
+			<strong>
+				<%= @mentor.user.fname.upcase%> <%= @mentor.user.lname.upcase %>
+			</strong>
+		</div>
+	</div>
 	<div class="card-body">
 		<ul class="list-group list-group-flush">
 			<li class="list-group-item"> Email: <%= @mentor.user.email %></li>
-			<li class="list-group-item"> Phone:  <%= @mentor.user.phone.to_i %></li>
+			<li class="list-group-item"> Phone: <%= @mentor.user.phone.to_i %></li>
 		</ul>
 	</div>
 	<div class="card-footer">
-			Fields of Interests
-			<% @mentor.categories.each do |category| %>
-				<span class = "badge badge-info"><%= link_to category.name, category_path(category), class: "card-link", style: "color:white" %></span>
-			<% end %>
-			<br>
-		<%= link_to 'Chat with mentor',talk_path(@mentor.id),class: "badge badge-primary", style: "color:white" %>
-  </div>
+		Fields of Interests
+		<% @mentor.categories.each do |category| %>
+			<span class = "badge badge-info"><%= link_to category.name, category_path(category), class: "card-link", style: "color:white" %></span>
+		<% end %><br>
+		<%= link_to 'Chat with mentor', talk_path(@mentor.id),class: "badge badge-primary", style: "color:white" %><br>
+	</div>
+</div><br>
+<div class="text-center">
+<%= link_to "[ Back to Mentors listing ]",mentors_path %>
 </div>
-<%= link_to "[ back to mentors lists ]",mentors_path %>
