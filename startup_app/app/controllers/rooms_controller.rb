@@ -2,22 +2,30 @@ class RoomsController < ApplicationController
   # Loads:
   # @rooms = all rooms
   # @room = current room when applicable
-  before_action :load_entities, except: [:talk]
   before_action :require_user
 
   def index
     @groups = Group.with_member(current_user)
-    @rooms = Room.find_by(group_id: @groups.id)
+    @rooms = Room.find_by(group_id: @groups.ids)
   end
-
-  def new
-    @room = Room.new()
-  end
+  #
+  # def new
+  #   @room = Room.new()
+  # end
 
   def talk
+    if current_user.id == params[:id].to_i
+      flash[:warning] = "Sorry sir, You don't need technology to talk with yourself!"
+      redirect_to rooms_path and return
+    end
     if current_user.shares_any_group?(User.find(params[:id]))
       @room = Room.find_by(name: "#{User.find(params[:id]).fname} #{current_user.id}")
-      @group = Group.find_by(room_id: @room.id)
+      if @room
+        @group = Group.find_by(room_id: @room.id)
+      else
+        @room = Room.find_by(name: "#{current_user.fname} #{User.find(params[:id]).id}")
+        @group = Group.find_by(room_id: @room.id)
+      end
       redirect_to room_path(@room)
     else
       @room = Room.new(name: "#{User.find(params[:id]).fname} #{current_user.id}")
@@ -34,24 +42,25 @@ class RoomsController < ApplicationController
       end
     end
   end
-
-  def create
-    @room = Room.new(permitted_parameters)
-    @group = Group.new
-    @room.group_id = @group.id
-    @group.add(current_user)
-    if @room.save
-      flash[:success] = "Room #{@room.name} was created successfully"
-      redirect_to room_path(@room)
-    else
-      render :new
-    end
-  end
+  #
+  # def create
+  #   @room = Room.new(permitted_parameters)
+  #   @group = Group.new
+  #   @room.group_id = @group.id
+  #   @group.add(current_user)
+  #   if @room.save
+  #     flash[:success] = "Room #{@room.name} was created successfully"
+  #     redirect_to room_path(@room)
+  #   else
+  #     render :new
+  #   end
+  # end
 
   def edit
   end
 
   def show
+    @room = Room.find(params[:id])
     @message = Message.new(room: @room)
     @room_messages = @room.message.includes(:user)
   end
@@ -59,19 +68,13 @@ class RoomsController < ApplicationController
   def update
     if @room.update_attributes(permitted_parameters)
       flash[:success] = "Room #{@room.name} was updated successfully"
-      redirect_to rooms_path
+      redirect_to room_path(@room)
     else
-      render :new
+      redirect_to rooms_path
     end
   end
 
   protected
-
-  def load_entities
-    @rooms = Room.all
-    @room = Room.find(params[:id]) if params[:id]
-  end
-
   def permitted_parameters
     params.require(:room).permit(:name)
   end

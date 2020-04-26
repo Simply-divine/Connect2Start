@@ -4,7 +4,7 @@ $(function() {
             room_id = $element.data('room-id')
         messageTemplate = $('[data-role="message-template"]');
 
-        $element.animate({ scrollTop: $element.prop("scrollHeight")}, 1000)
+        $element.animate({ scrollTop: $element.prop("scrollHeight")}, 0.001)
 
         App.cable.subscriptions.create(
             {
@@ -18,7 +18,7 @@ $(function() {
                     content.find('[data-role="message-date"]').text(data.updated_at);
                     $element.append(content);
                     //byebug
-                    $element.animate({ scrollTop: $element.prop("scrollHeight")}, 1000);
+                    $element.animate({ scrollTop: $element.prop("scrollHeight")}, 0.001);
                 }
             }
         );
