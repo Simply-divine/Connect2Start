@@ -63,6 +63,11 @@ class RoomsController < ApplicationController
   end
 
   def show
+    @groups = Group.with_member(current_user)
+    @rooms = []
+    @groups.each do |group|
+      @rooms << Room.find_by(group_id: group.id)
+    end
     @room = Room.find(params[:id])
     @message = Message.new(room: @room)
     @room_messages = @room.message.includes(:user)
