@@ -4,7 +4,7 @@
 
 <div class="row">
   <div class="col-12 col-md-3">
-    <%= render partial: 'rooms' %>
+    <%= render 'rooms' %>
   </div>
 
   <div class="col"  style="width: 40%;">
@@ -35,7 +35,7 @@
       <div class="input-group mb-3">
         <%= form.text_field :message, class: 'chat-input', id: "input_msg", autofocus: true %>
         <div class="input-group-append">
-          <%= form.submit "Send", class: 'btn btn-primary chat-input', id: "button" %>
+          <%= form.submit "Send", class: 'btn btn-primary btn-md chat-input', id: "button" %>
         </div>
       </div>
 
