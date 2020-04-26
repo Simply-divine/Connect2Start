@@ -1,10 +1,10 @@
-  <p class="mb-0 offset-1">
+  <p class="mb-0 text-center">
       <%= link_to  "Join our team of investors", investors_signup_path %>
   </p>
 <div class = "container pagination justify-content-center">
   <%= will_paginate @investors %>
 </div>
-<div class = "center offset-5">
+<div class = "text-center">
 <%= render 'investor', obj: @investors %>
 </div>
 <div class = "container pagination justify-content-center">
