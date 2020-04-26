@@ -20,7 +20,12 @@ class RoomsController < ApplicationController
     end
     if current_user.shares_any_group?(User.find(params[:id]))
       @room = Room.find_by(name: "#{User.find(params[:id]).fname} #{current_user.id}")
-      @group = Group.find_by(room_id: @room.id)
+      if @room
+        @group = Group.find_by(room_id: @room.id)
+      else
+        @room = Room.find_by(name: "#{current_user.fname} #{User.find(params[:id]).id}")
+        @group = Group.find_by(room_id: @room.id)
+      end
       redirect_to room_path(@room)
     else
       @room = Room.new(name: "#{User.find(params[:id]).fname} #{current_user.id}")

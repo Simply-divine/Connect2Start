@@ -16,7 +16,7 @@
             <div class="message-content row">
               <div class="col">
                 <div class="text-left" style="padding-left: 10px;padding-top: 5px">
-                  <%= room_message.message%>
+                  <%= User.find(room_message.user_id).fname.upcase%> : <%= room_message.message%>
                 </div>
               </div>
               <div class="col text-right" >
@@ -33,7 +33,7 @@
 
     <%= form_with model: @message, remote: true, id: "form_enter"  do |form| %>
       <div class="input-group mb-3">
-        <%= form.text_field :message, class: 'chat-input', id: "input_msg"%>
+        <%= form.text_field :message, class: 'chat-input', id: "input_msg", autofocus: true %>
         <div class="input-group-append">
           <%= form.submit "Send", class: 'btn btn-primary chat-input', id: "button" %>
         </div>

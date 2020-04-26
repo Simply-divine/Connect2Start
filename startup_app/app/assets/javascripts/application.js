@@ -18,26 +18,27 @@
 //= require turbolinks
 //= require_tree .
 
-scroll_bottom = function() {
-    if ($('#messages_all').length > 0) {
-        $('#messages_all').scrollTop($('#messages_all')[0].scrollHeight);
-    }
+var cnt = {
+    num: 0
 };
-
 submit_message = function() {
     $('#input_msg').on('keydown', function(e) {
         if (e.keyCode == 13) {
             $('#button').click();
+            cnt.num = 1;
             e.target.value = "";
+            location.reload();
         };
     });
 };
-
 $(document).on('turbolinks:load', function() {
     $('.ui.dropdown').dropdown();
     $('.message .close').on('click', function() {
         $(this).closest('.message').transition('fade');
     });
+    if( cnt.num != 0 ){
+        cnt.num = 0;
+        location.reload();
+    }
     submit_message();
-    scroll_bottom();
 })
