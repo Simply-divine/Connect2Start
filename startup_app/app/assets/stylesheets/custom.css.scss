@@ -1,5 +1,6 @@
 @import "bootstrap";
 @import "bootstrap";
+
 body,
 html {
     height: 100% !important;
@@ -17,6 +18,9 @@ nav {
     flex: 0 1 auto;
 }
 
+input[type = "date"]{
+    line-height: 10 rem !important;
+}
 .pagination {
     margin: 15px;
 }
@@ -26,7 +30,7 @@ nav {
 }
 
 .navbar-custom {
-    background-color: #4F32EB !important;
+    background-color: #07a6ed !important;
 }
 
 .paginate {
@@ -51,7 +55,6 @@ nav {
 .logo {
     float: left;
     font-size: 37px;
-    text-transform: uppercase;
     color: #fff !important;
 }
 
@@ -96,16 +99,9 @@ nav {
 .card {}
 
 .btn-primary {
-    background-color: #4F32EB;
+    background-color: #07a6ed;
 }
 
-.btn-primary:hover {
-    background-color: #4B25DF;
-}
-
-.btn-primary:visited {
-    background-color: #4B25DF;
-}
 
 #page-content {
     flex: 1 0 auto;
@@ -141,7 +137,7 @@ footer ul {
 }
 
 .send-button {
-    background: #4F32EB;
+    background: #07a6ed;
     width: 100%;
     font-weight: 600;
     color: #fff;

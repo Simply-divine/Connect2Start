@@ -1,14 +1,13 @@
 <% obj.each do |mentor| %>
-  <div class="card" style="width: 18rem;">
+  <div class="card offset-5 center" style = "width: 30rem" >
     <div class="card-header">
-        <%= mentor.user.fname.upcase%> <%=mentor.user.lname.upcase %>
+			 	<strong> <%= mentor.user.fname.upcase%> <%=mentor.user.lname.upcase %> </strong>
 				<p><%#= mentor.description, class: "card-text" %></p>
     </div>
 		<div>
 			<ul class="list-group list-group-flush">
-				<li class="list-group-item"><%= mentor.user.email %></li>
-				<li class="list-group-item"><%= mentor.user.phone.to_i %></li>
-				<li class="list-group-item"><%= mentor.user.dob %></li>
+				<li class="list-group-item"> Email me at: <%= mentor.user.email %></li>
+				<li class="list-group-item"> Contact no: <%= mentor.user.phone.to_i %></li>
 			</ul>
 		</div>
 			

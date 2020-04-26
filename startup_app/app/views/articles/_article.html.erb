@@ -18,8 +18,8 @@
 		</div>
 		<%# <% if current_user == article.user || current_user.admin? %>
 		<div class = "card-footer"> 
-			<%= link_to "Edit",edit_article_path(article),class: "btn btn-md btn-primary"  %>
-			<td> <%= link_to "delete",article_path(article),method: :delete,data: {confirm: 'Are you sure?'},class: "btn btn-danger btn-md" %>
+			<%= link_to "Edit",edit_article_path(article),class: "btn btn-lg btn-primary"  %>
+			<td> <%= link_to "delete",article_path(article),method: :delete,data: {confirm: 'Are you sure?'},class: "btn btn-danger btn-lg" %>
 		</div>
 	</div>
 <% end %>

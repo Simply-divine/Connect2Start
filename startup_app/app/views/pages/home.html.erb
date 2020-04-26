@@ -1,3 +1,199 @@
-<h1> Welcome to home page</h1>
 
-<%= link_to  "Articles", articles_path %>
+<header class="site-header">
+    </header>
+    <div class="page-content">
+      <div class="page-content-container">
+        <div class="home">
+          <!-- 
+            MENU SECTION 
+            
+            
+            
+            -->
+          <section class="menu-section ">
+            <div class="menu-section-container">
+              <div class="menu-section-container-hamburger">
+                <div class="menu-section-hamburger">
+                  <div id="nav-toggle" href="#"><span></span></div>
+                </div>
+              </div>
+              <nav class="menu-section-container-nav bigger h2-like">
+                <div class="nav-item menu-nav-item" data-target="explanation-section"><strong>Motivation</strong></div>
+                <div class="nav-item menu-nav-item" data-target="howitworks-section"><strong>How it works</strong></div>
+                <div class="nav-item menu-nav-item" data-target="faq-section"><strong>Faq</strong></div>
+                <div class="nav-item menu-nav-item" data-target="features-section"><strong>Features</strong></div>
+                <div class="nav-item menu-nav-item" data-target="twitter-section"><strong>Build trust</strong></div>
+                <div class="nav-item menu-nav-item" data-target="pricing-section"><strong>Pricing</strong></div>
+                <div class="nav-item menu-nav-item" data-target="contact-section"><strong>Join</strong></div>
+              </nav>
+            </div>
+          </section>
+          <!-- 
+            HERO SECTION 
+            
+            
+            
+            -->
+          <section class="hero-section ">
+            <div class="wrapper w960p flex-container flex-container-v">
+              <h1 class="xlbiggest flex-item-center txtcenter">Connect2Start</h1><br>
+              <p class="biggest flex-item-center h2-like txtcenter">Get started with your startup journey.</p>
+              <p class="biggest flex-item-center h2-like txtcenter">Get guidance, Stay connected</p>
+              <p class="biggest flex-item-center h2-like txtcenter"></p>
+              <div class="flex-item-center">
+                <div class="mtxl w150p"></div>
+                <button class = "button-primary txtcenter main-cta">
+                	<%= link_to 'Sign Up', signup_path, class: "button-homepage" %>
+
+                </button>
+  			
+              </div>
+            </div>
+          </section>
+          <!-- 
+            EXPLANATION SECTION 
+            
+            
+            
+            -->
+          <section class="explanation-section mtxlp ">
+            <div class="wrapper w960p flex-container flex-container-v">
+              <div class="separator w10"></div>
+              <h1 class="xbiggest flex-item-center txtcenter mtxl">Motivation</h1>
+              <p class="flex-item-center h3-like txtcenter mts"> Everybody is in the race to become the next Elon Musk. But they forget it can’t be done alone.The guidance, funding, motivation, ideas, its validation must be done.</p>
+              <p class="flex-item-center h3-like txtcenter mts"> &nbsp; </p>
+              <p class="flex-item-center h3-like txtcenter mts"> We introduce you a <strong>real time Web App</strong> to <strong>connect</strong> with <strong>Investors, Mentors, Startups</strong> and <strong>several enthusiastic writers</strong> via <strong>articles and personal chat rooms</strong>.</p>
+              <p class="flex-item-center h3-like txtcenter mts"> &nbsp; </p>
+              <p class="flex-item-center h3-like txtcenter mts"> A simple but effective solution. Want more? It's <strong>open source</strong>..</p>
+              <div class="flex-item-center">  
+                <a class=" button flex-item-center mtxl" href="https://github.com/Simply-divine/Starter_Rails"> View it on GitHub</a>
+              </div>
+            </div>
+          </section>
+          <!-- 
+            HOWITWORKS SECTION 
+            
+            
+            
+            -->
+          <section class="howitworks-section mtxlp">
+            <div class="wrapper w960p flex-container flex-container-v">
+              <div class="separator w10"></div>
+              <h1 class="xbiggest flex-item-center txtcenter mtxl">How to start</h1>
+              <p class="flex-item-center h3-like txtcenter mts">If you are a complete beginner but an enthusiast, we recommend you to <strong>read our articles</strong> written by several experienced mentors and startups.</p>
+              <p class="flex-item-center h3-like txtcenter mts">If you want to discuss the idea with several experienced mentors in the field, just go to <strong> Chat with mentor </strong></p>
+              <p class="flex-item-center h3-like txtcenter mts">If you need funding for your project, we have several investors in different fields, just go to <strong> Chat with investor </strong></p>
+              <div class="grid has-gutter-xl mtxl">
+                <div class="txtcenter">
+                  <div>
+                    <strong class="h3-like">1</strong>
+                  </div>
+                  <div class="big">Sign up to create your account.</div>
+                </div>
+                <div class="txtcenter">
+                  <div class="mtm is-hidden tiny-visible"></div>
+                  <div>
+                    <strong class="h3-like">2</strong>
+                  </div>
+                  <div class="big">Chat with mentors, other startups or investors </div>
+                </div>
+                <div class="txtcenter">
+                  <div class="mtm is-hidden tiny-visible"></div>
+                  <div>
+                    <strong class="h3-like">3</strong>
+                  </div>
+                  <div class="big">
+                  		Read articles or create some content to inspire future startups
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- 
+            FEATURES SECTION 
+            
+            
+            
+            -->
+          <section class="features-section mtxl">
+            <div class="wrapper w960p flex-container flex-container-v">
+              <div class="separator w10"></div>
+              <h1 class="xbiggest flex-item-center txtcenter mtxl">Features</h1>
+              <div class="features-container mtxl">
+                <div class="grid-2 has-gutter">
+                  <div class="Media mbl">
+                    <svg class="Media-figure" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 490 490" width="50px" height="50px" xml:space="preserve">
+                      <g>
+                        <path d="M432.05,373.8c-14.8,0-28.3,5.4-38.4,14.8l-74.1-78.1c15.5-17.5,24.8-40.4,24.8-66c0-54.7-44.7-99.4-99.4-99.4 c-5,0-10.5,0.4-15.5,1.2c0,0,18.2-68.3,18.2-68.7c20.2-1.6,35.7-18.2,35.7-38.8c0-21.4-17.5-38.8-38.8-38.8s-38.1,17.9-38.1,39.2 c0,15.5,9.3,28.7,22.1,34.9v0.4l-21.3,78.4c-13.2,5.5-25,13.7-34.6,23.7l-72.6-78c10.1-10.5,16.3-24.5,16.3-40.4 c0-31.8-26-57.9-57.9-57.9s-57.9,26-57.9,57.9c0,31.8,26,57.9,57.9,57.9c8.8,0,17.7-2.3,25-5.7l77.1,82.6 c-9.3,15.1-14.7,33-14.7,52.4c0,22.4,7.7,43.3,20,59.9c0,0-53,53.4-53.4,53.4c-11.6-7.8-25.2-12.4-40.4-12.4 c-39.6,0.4-71.4,32.2-71.4,71.8s31.8,71.4,71.4,71.4s71.4-31.8,71.4-71.4c0-17.5-6.2-33.4-16.7-45.8l52.4-52.4 c17.5,15.5,40.4,24.8,65.6,24.8c22.5,0,43.1-7.4,59.7-20.1c0,0,75.8,79.6,76.2,79.9c-4.7,8.2-7,17.5-7,27.6 c0,31.8,26,57.9,57.9,57.9s57.9-26,57.9-57.9S463.85,373.8,432.05,373.8z" fill="#555"/>
+                      </g>
+                    </svg>
+                    <div class="Media-body big prm">A <strong>real time chat</strong> application.
+                    </div>
+                  </div>
+                  <div class="Media mbl">
+                    <svg class="Media-figure" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 490 490" width="50px" height="50px" xml:space="preserve">
+                      <g>
+                        <path d="M432.05,373.8c-14.8,0-28.3,5.4-38.4,14.8l-74.1-78.1c15.5-17.5,24.8-40.4,24.8-66c0-54.7-44.7-99.4-99.4-99.4 c-5,0-10.5,0.4-15.5,1.2c0,0,18.2-68.3,18.2-68.7c20.2-1.6,35.7-18.2,35.7-38.8c0-21.4-17.5-38.8-38.8-38.8s-38.1,17.9-38.1,39.2 c0,15.5,9.3,28.7,22.1,34.9v0.4l-21.3,78.4c-13.2,5.5-25,13.7-34.6,23.7l-72.6-78c10.1-10.5,16.3-24.5,16.3-40.4 c0-31.8-26-57.9-57.9-57.9s-57.9,26-57.9,57.9c0,31.8,26,57.9,57.9,57.9c8.8,0,17.7-2.3,25-5.7l77.1,82.6 c-9.3,15.1-14.7,33-14.7,52.4c0,22.4,7.7,43.3,20,59.9c0,0-53,53.4-53.4,53.4c-11.6-7.8-25.2-12.4-40.4-12.4 c-39.6,0.4-71.4,32.2-71.4,71.8s31.8,71.4,71.4,71.4s71.4-31.8,71.4-71.4c0-17.5-6.2-33.4-16.7-45.8l52.4-52.4 c17.5,15.5,40.4,24.8,65.6,24.8c22.5,0,43.1-7.4,59.7-20.1c0,0,75.8,79.6,76.2,79.9c-4.7,8.2-7,17.5-7,27.6 c0,31.8,26,57.9,57.9,57.9s57.9-26,57.9-57.9S463.85,373.8,432.05,373.8z" fill="#555"/>
+                      </g>
+                    </svg>
+                    <div class="Media-body big prm"> A Beautiful <strong>Blog</strong> system, with articles classified by categories </div>
+               		 </div>
+                
+                </div><div class="grid-2 has-gutter">
+                  <div class="Media mbl">
+                    <svg class="Media-figure" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 490 490" width="50px" height="50px" xml:space="preserve">
+                      <g>
+                        <path d="M432.05,373.8c-14.8,0-28.3,5.4-38.4,14.8l-74.1-78.1c15.5-17.5,24.8-40.4,24.8-66c0-54.7-44.7-99.4-99.4-99.4 c-5,0-10.5,0.4-15.5,1.2c0,0,18.2-68.3,18.2-68.7c20.2-1.6,35.7-18.2,35.7-38.8c0-21.4-17.5-38.8-38.8-38.8s-38.1,17.9-38.1,39.2 c0,15.5,9.3,28.7,22.1,34.9v0.4l-21.3,78.4c-13.2,5.5-25,13.7-34.6,23.7l-72.6-78c10.1-10.5,16.3-24.5,16.3-40.4 c0-31.8-26-57.9-57.9-57.9s-57.9,26-57.9,57.9c0,31.8,26,57.9,57.9,57.9c8.8,0,17.7-2.3,25-5.7l77.1,82.6 c-9.3,15.1-14.7,33-14.7,52.4c0,22.4,7.7,43.3,20,59.9c0,0-53,53.4-53.4,53.4c-11.6-7.8-25.2-12.4-40.4-12.4 c-39.6,0.4-71.4,32.2-71.4,71.8s31.8,71.4,71.4,71.4s71.4-31.8,71.4-71.4c0-17.5-6.2-33.4-16.7-45.8l52.4-52.4 c17.5,15.5,40.4,24.8,65.6,24.8c22.5,0,43.1-7.4,59.7-20.1c0,0,75.8,79.6,76.2,79.9c-4.7,8.2-7,17.5-7,27.6 c0,31.8,26,57.9,57.9,57.9s57.9-26,57.9-57.9S463.85,373.8,432.05,373.8z" fill="#555"/>
+                      </g>
+                    </svg>
+                    <div class="Media-body big prm">It's <strong>Open Source</strong> application.
+                    	You too can contribute to make it more useful.
+                    </div>
+                  </div>
+                  <div class="Media mbl">
+                    <svg class="Media-figure" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 490 490" width="50px" height="50px" xml:space="preserve">
+                      <g>
+                        <path d="M432.05,373.8c-14.8,0-28.3,5.4-38.4,14.8l-74.1-78.1c15.5-17.5,24.8-40.4,24.8-66c0-54.7-44.7-99.4-99.4-99.4 c-5,0-10.5,0.4-15.5,1.2c0,0,18.2-68.3,18.2-68.7c20.2-1.6,35.7-18.2,35.7-38.8c0-21.4-17.5-38.8-38.8-38.8s-38.1,17.9-38.1,39.2 c0,15.5,9.3,28.7,22.1,34.9v0.4l-21.3,78.4c-13.2,5.5-25,13.7-34.6,23.7l-72.6-78c10.1-10.5,16.3-24.5,16.3-40.4 c0-31.8-26-57.9-57.9-57.9s-57.9,26-57.9,57.9c0,31.8,26,57.9,57.9,57.9c8.8,0,17.7-2.3,25-5.7l77.1,82.6 c-9.3,15.1-14.7,33-14.7,52.4c0,22.4,7.7,43.3,20,59.9c0,0-53,53.4-53.4,53.4c-11.6-7.8-25.2-12.4-40.4-12.4 c-39.6,0.4-71.4,32.2-71.4,71.8s31.8,71.4,71.4,71.4s71.4-31.8,71.4-71.4c0-17.5-6.2-33.4-16.7-45.8l52.4-52.4 c17.5,15.5,40.4,24.8,65.6,24.8c22.5,0,43.1-7.4,59.7-20.1c0,0,75.8,79.6,76.2,79.9c-4.7,8.2-7,17.5-7,27.6 c0,31.8,26,57.9,57.9,57.9s57.9-26,57.9-57.9S463.85,373.8,432.05,373.8z" fill="#555"/>
+                      </g>
+                    </svg>
+                    <div class="Media-body big prm"> It's <strong>Mobile friendly.</strong> </div>
+               		 </div>
+                
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- 
+            FAQ SECTION 
+            
+            
+            
+            -->
+                    <!-- 
+            TWITTER SECTION 
+            
+            
+            
+            -->
+          <section class="contact-section mtxl">
+            <div class="wrapper w960p flex-container flex-container-v">
+              <div class="separator w10"></div>
+              <h1 class="xbiggest flex-item-center txtcenter mtxl">Let's keep in touch</h1>
+              <p class="flex-item-center h3-like txtcenter mts">You can contact our contributors anytime</p>
+
+              
+            </div>
+          </section>
+          <!-- 
+            FOOTER SECTION 
+            
+            
+            
+            -->
+  
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="/custom-var.js"></script>
+    <script type="text/javascript" src="/vendor.min.js"></script>
+    <script type="text/javascript" src="/custom.js"></script>

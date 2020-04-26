@@ -13,7 +13,7 @@ gem 'jquery'
 # gem 'jquery-ujs'
 
 gem 'jquery-rails'
-
+# gem 'compass'
 gem 'bootstrap', '~> 4.4.1'
 gem 'groupify'
 # gem 'devise'

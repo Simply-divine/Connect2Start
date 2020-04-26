@@ -1,12 +1,10 @@
-<blockquote class="blockquote text-center">
-<p class="mb-0 offset-1">
+<p class="offset-1 center">
       <%= link_to  "Join our team of mentors", mentors_signup_path %>
   </p>
-</blockquote>
 <div class = "container pagination justify-content-center">
   <%= will_paginate @mentors %>
 </div>
-<div class = "offset-5">
+<div>
 <%= render 'mentor', obj: @mentors %>
 </div>
 <div class = "container pagination justify-content-center">
