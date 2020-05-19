@@ -33,8 +33,8 @@
 		<% if @article.categories.any? %>
 			<p>Categories: <%=render @article.categories%></p>
 		<% end %>
-		 <%= link_to 'edit current article',edit_article_path(@article),class: "btn btn-lg btn-primary" if logged_in_user? and (current_user == @article.user || current_user.admin?) %>
-		 <%= link_to 'delete article', article_path(@article), class: "btn btn-lg btn-danger", method: :delete, data: {confirm: 'Are you sure you want to delete the article?'} if logged_in_user? and (current_user == @article.user || current_user.admin?) %> 	
+		 <%= link_to 'edit current article',edit_article_path(@article),class: "btn btn-lg btn-primary" if logged_in_user? and (current_user == @article.user) %>
+		 <%= link_to 'delete article', article_path(@article), class: "btn btn-lg btn-danger", method: :delete, data: {confirm: 'Are you sure you want to delete the article?'} if logged_in_user? and (current_user == @article.user) %> 	
 		<%= link_to 'View all articles', articles_path, class: "btn btn-lg btn-success" %>
 		<%= link_to 'Chat with article author', talk_path(@article.user.id), class: "btn btn-lg btn-primary" %>
 		<!-- </div> -->

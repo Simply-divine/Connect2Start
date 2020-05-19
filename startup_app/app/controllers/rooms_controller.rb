@@ -6,9 +6,16 @@ class RoomsController < ApplicationController
 
   def index
     @groups = Group.with_member(current_user)
-    @rooms = []
-    @groups.each do |group|
-      @rooms << Room.find_by(group_id: group.id)
+    if @groups
+      @rooms = []
+      @groups.each do |group|
+        if Room.find_by(group_id: group.id)
+          @rooms << Room.find_by(group_id: group.id)
+        end
+      end
+    else
+      flash[:danger] = "Something went wrong!"
+      redirect_to root_path
     end
   end
   #
@@ -36,8 +43,10 @@ class RoomsController < ApplicationController
       if @room.save
         @group.room_id = @room.id
         @group.add(current_user,User.find(params[:id]))
-        @room.group_id = @group.id
         @group.save
+        @room.group_id = @group.id
+        @room.save
+        @group.save 
         flash[:success] = "Room #{@room.name} was created successfully"
         redirect_to room_path(@room)
       else
@@ -62,15 +71,22 @@ class RoomsController < ApplicationController
   def edit
   end
 
-  def show
+ def show
     @groups = Group.with_member(current_user)
-    @rooms = []
-    @groups.each do |group|
-      @rooms << Room.find_by(group_id: group.id)
+    if @groups
+      @rooms = []
+      @groups.each do |group|
+        if Room.find_by(group_id: group.id)
+          @rooms << Room.find_by(group_id: group.id)
+        end
+      end
+      @room = Room.find(params[:id])
+      @message = Message.new(room: @room)
+      @room_messages = @room.message.includes(:user)
+    else
+      flash[:danger] = "Something went wrong!"
+      redirect_to root_path
     end
-    @room = Room.find(params[:id])
-    @message = Message.new(room: @room)
-    @room_messages = @room.message.includes(:user)
   end
 
   def update

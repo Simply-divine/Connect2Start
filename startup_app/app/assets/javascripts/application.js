@@ -31,8 +31,19 @@ submit_message = function() {
         };
     });
 };
-
-$(document).on('turbolinks:load', function() {
+this method is simialr to first js method above
+//Jquery initialize
+$(document).ready(function(){    
+    //Check if the current URL contains '# or hash'
+    if(document.URL.indexOf("#")==-1){
+        // Set the URL to whatever it was plus "#loaded".
+        url = document.URL+"#loaded";
+        location = "#loaded";
+        //Reload the page using reload() method
+        location.reload(true);
+    }
+});
+$(document).on('click', function() {
     $('.ui.dropdown').dropdown();
     $('.message .close').on('click', function() {
         $(this).closest('.message').transition('fade');
